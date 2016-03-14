@@ -1,0 +1,82 @@
+﻿@using AlloyInstantArticles.Business
+@using BVNetwork.InstantArticles.Models.Interfaces
+@using EPiServer.Core
+@model BVNetwork.InstantArticles.Models.Interfaces.IInstantArticle
+
+@{
+    Layout = null;
+}
+
+<item>
+    <title>@Model.Title</title>
+    <link>@UrlUtils.GetExternalUrl(Model.PageLink)</link>
+    <guid>@Model.ContentGuid</guid>
+    <pubDate>@Model.StartPublish</pubDate>
+    @if (Model.Authors != null && Model.Authors.Any())
+    {
+        foreach (var author in Model.Authors)
+        {
+            <author>@( (author.Get<IContent>() as IInstantArticleAuthor).Name)</author>
+        }
+    }
+    @*<description>This is my first Instant Article. How awesome is this?</description>*@
+    <content:encoded>
+        <![CDATA[
+        <!doctype html>
+        <html lang="en" prefix="op: http://media.facebook.com/op#">
+        <head>
+            <meta charset="utf-8">
+            <link rel="canonical" href="@UrlUtils.GetExternalUrl(Model.PageLink)">
+            <meta property="op:markup_version" content="v1.0">
+        </head>
+        <body>
+        <article>
+
+            <header>
+                @if(Model.Image != null && Model.Image.Image != null)
+                {
+                    <!-- The cover image shown inside your article -->
+                    <figure>
+                        <img src="@UrlUtils.GetExternalUrl(Model.Image.Image)" />
+                        <figcaption>@Model.Image.ImageText</figcaption>
+                    </figure>
+                }
+                    <!-- The title and subtitle shown in your article -->
+                    <h1> @Model.Title </h1>
+                    @if (Model.Subtitle != null)
+                    {
+                        <h2> @Model.Subtitle </h2>
+                    }
+                    <!-- A kicker for your article -->
+                    @if (Model.Kicker != null)
+                    {
+                        <h3 class="op-kicker">
+                            @Model.Kicker
+                        </h3>
+                    }
+
+                <!-- The author of your article -->
+                
+                    @{if(Model.Authors != null)
+                        {
+                            Html.RenderPartial("InstantArticleAuthors", Model.Authors);
+                        }
+                    }
+                    
+                    <!-- The published and last modified time stamps -->
+                    <time class="op-published" dateTime=">@{ Html.RenderPartial("DateTimeISO8601", Model.StartPublish); }">@Model.StartPublish</time>
+                    <time class="op-modified" dateTime="@{ Html.RenderPartial("DateTimeISO8601", Model.Changed); }">@Model.Changed</time>
+                </header>
+
+                <!-- Article body goes here -->
+                @Html.PropertyFor(x => x.MainBody)
+
+                @*<footer>
+                    <!-- Article footer goes here -->
+                </footer>*@
+            </article>
+        </body>
+    </html>
+    ]]>
+</content:encoded>
+</item>

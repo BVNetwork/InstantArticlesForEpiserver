@@ -7,8 +7,8 @@
     <ProjectGuid>{515A1193-E1C7-458D-8668-DBD547047FA4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BVNetwork.ContentTypeUtility</RootNamespace>
-    <AssemblyName>BVNetwork.ContentTypeUtility</AssemblyName>
+    <RootNamespace>BVNetwork.InstantArticles</RootNamespace>
+    <AssemblyName>BVNetwork.InstantArticles</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -115,6 +115,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -150,6 +151,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\UrlUtils.cs" />
+    <Compile Include="Controllers\RssPageController.cs" />
+    <Compile Include="Models\Interfaces\IInstantArticle.cs" />
+    <Compile Include="Models\Interfaces\IInstantArticleAuthor.cs" />
+    <Compile Include="Models\Pages\RssPage.cs" />
+    <Compile Include="Models\ViewModels\RssViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,11 +164,14 @@
     <None Include="module.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
+    <None Include="Views\RssPage\Index.cshtml" />
+    <None Include="Views\Shared\DateTimeISO8601.cshtml" />
+    <None Include="Views\Shared\InstantArticleAuthor.cshtml" />
+    <None Include="Views\Shared\InstantArticleAuthors.cshtml" />
+    <None Include="Views\Shared\InstantArticleItem.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask TaskName="ZipDirectory" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>

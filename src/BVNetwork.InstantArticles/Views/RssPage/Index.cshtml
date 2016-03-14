@@ -1,0 +1,26 @@
+﻿@using AlloyInstantArticles.Business
+@using EPiServer.Core
+@using EPiServer.Globalization
+@model RssViewModel
+
+@{
+    Layout = null;
+}
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>@Model.CurrentPage.RssTitle</title>
+        <link>@UrlUtils.GetExternalUrl(ContentReference.StartPage as ContentReference)</link>
+        <description>
+            @Model.CurrentPage.RssDescription
+        </description>
+        <language>en-us</language>
+        <language>@ContentLanguage.PreferredCulture.Name</language>
+        <lastBuildDate>@{ Html.RenderPartial("DateTimeISO8601", DateTime.UtcNow); } </lastBuildDate>
+
+        @foreach (var article in Model.InstantArticles)
+        {
+            Html.RenderPartial("InstantArticleItem", article);
+        }
+
+    </channel>
+</rss>   

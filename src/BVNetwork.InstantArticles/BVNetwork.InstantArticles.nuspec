@@ -5,6 +5,7 @@
         <title>Instant Articles</title>
         <version>0.0.1</version>
         <owners>BV Network</owners>
+        <authors>Pontus Hagman</authors>
         <licenseUrl>https://www.coderesort.com/p/epicode/wiki/EpicodeLicense</licenseUrl>
         <projectUrl>https://github.com/BVNetwork/InstantArticles</projectUrl>
         <iconUrl>http://www.coderesort.com/favicon.ico</iconUrl>
@@ -19,6 +20,6 @@
     </metadata>
     <files>
         <file src="bin\$configuration$\BVNetwork.InstantArticles.dll" target="lib\net45\" />  
-        <file src="bin\$configuration$\BVNetwork.InstantArticles.zip" target="content\modules\_protected\BVNetwork.InstantArticles\" />
+        <file src="bin\$configuration$\BVNetwork.InstantArticles.zip" target="content\modules\BVNetwork.InstantArticles\" />
     </files>
 </package>
