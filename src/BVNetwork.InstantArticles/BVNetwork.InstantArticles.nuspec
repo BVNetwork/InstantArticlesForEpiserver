@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>BVNetwork.InstantArticles</id>
+        <title>Instant Articles</title>
+        <version>0.0.1</version>
+        <owners>BV Network</owners>
+        <licenseUrl>https://www.coderesort.com/p/epicode/wiki/EpicodeLicense</licenseUrl>
+        <projectUrl>https://github.com/BVNetwork/InstantArticles</projectUrl>
+        <iconUrl>http://www.coderesort.com/favicon.ico</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>InstantArticles.</description>
+        <summary>InstantArticles.</summary>
+        <language>en-US</language>
+      <dependencies>
+        <dependency id="EPiServer.CMS.UI.Core" version="[9.0.0, 10.0)" />
+        <dependency id="EPiServer.Framework" version="[9.0.0, 10.0)" />
+      </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\BVNetwork.InstantArticles.dll" target="lib\net45\" />  
+        <file src="bin\$configuration$\BVNetwork.InstantArticles.zip" target="content\modules\_protected\BVNetwork.InstantArticles\" />
+    </files>
+</package>
