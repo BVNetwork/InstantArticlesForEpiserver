@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Routing;
+﻿using System.Web.Routing;
 using EPiServer.Core;
 using EPiServer.Globalization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
 
-namespace AlloyInstantArticles.Business
+namespace BVNetwork.InstantArticles.Business
 {
     public static class UrlUtils
     {
