@@ -67,7 +67,7 @@
                     }
 
                     <!-- The published and last modified time stamps -->
-                    <time class="op-published" dateTime=">@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@Model.StartPublish</time>
+                    <time class="op-published" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@Model.StartPublish</time>
                     <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@Model.Changed</time>
                 </header>
 
