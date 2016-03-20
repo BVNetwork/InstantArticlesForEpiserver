@@ -6,6 +6,6 @@ namespace BVNetwork.InstantArticles.Models.Interfaces
     {
         ContentReference Image { get; set; }
 
-        string ImageText { get; set; }
+        string ImageCaption { get; set; }
     }
 }
