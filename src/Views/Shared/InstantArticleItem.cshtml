@@ -35,12 +35,12 @@
         <article>
 
             <header>
-                @if(Model.Image != null && Model.Image.Image != null)
+                @if(Model.MainImage != null && Model.MainImage != null)
                 {
                     <!-- The cover image shown inside your article -->
                     <figure>
-                        <img src="@UrlUtils.GetExternalUrl(Model.Image.Image)" />
-                        <figcaption>@Model.Image.ImageText</figcaption>
+                        <img src="@UrlUtils.GetExternalUrl(Model.MainImage)" />
+                        <figcaption>@Model.MainImageCaption</figcaption>
                     </figure>
                 }
                     <!-- The title and subtitle shown in your article -->

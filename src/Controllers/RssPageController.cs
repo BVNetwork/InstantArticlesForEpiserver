@@ -31,7 +31,7 @@ namespace BVNetwork.InstantArticles.Controllers
             //// .GetResult();
             //var instantArticles = _contentLoader.GetChildren<InstantArticlePage>(ContentReference.StartPage);
             //model.InstantArticles = articles.Cast<IInstantArticle>();
-            return View(Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/RssPage/Index.cshtml",model);
+            return View(Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/RssPage/Index.cshtml", model);
         }
 
         public RssPageController(IContentLoader contentLoader)
