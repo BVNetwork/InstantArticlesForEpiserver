@@ -16,9 +16,9 @@ namespace BVNetwork.InstantArticles.Models.Interfaces
 
         string Kicker { get; }
 
-        ContentReference MainImage { get; }
+        ContentReference Image { get; }
 
-        string MainImageCaption { get; }
+        string ImageCaption { get; }
 
         XhtmlString MainBody { get; }
 
