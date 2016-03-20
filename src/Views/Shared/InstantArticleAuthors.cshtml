@@ -1,11 +1,12 @@
 ﻿@using BVNetwork.InstantArticles.Models.Interfaces
 @using EPiServer.Core
+@using EPiServer.Shell
 @model IList<ContentReference>
 
 @if (Model.Any())
 {
     foreach (var author in Model)
     {
-        Html.RenderPartial("InstantArticleAuthor", author.Get<IContent>() as IInstantArticleAuthor);
+        Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/InstantArticleAuthor.cshtml", author.Get<IContent>() as IInstantArticleAuthor);
     }
 }

@@ -36,12 +36,12 @@
             <article>
 
                 <header>
-                    @if (Model.MainImage != null && Model.MainImage != null)
+                    @if (Model.Image != null && Model.Image != null)
                     {
                     <!-- The cover image shown inside your article -->
                         <figure>
-                            <img src="@UrlUtils.GetExternalUrl(Model.MainImage)" />
-                            <figcaption>@Model.MainImageCaption</figcaption>
+                            <img src="@UrlUtils.GetExternalUrl(Model.Image)" />
+                            <figcaption>@Model.ImageCaption</figcaption>
                         </figure>
                     }
                     <!-- The title and subtitle shown in your article -->
@@ -62,7 +62,7 @@
 
                     @{if (Model.Authors != null)
                         {
-                            Html.RenderPartial("InstantArticleAuthors", Model.Authors);
+                            Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/InstantArticleAuthors.cshtml", Model.Authors);
                         }
                     }
 
