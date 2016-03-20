@@ -1,0 +1,16 @@
+﻿@model BVNetwork.InstantArticles.Models.Interfaces.IInstantArticleAuthor
+
+<address>
+    @{
+        if (Model.FacebookUsername != null)
+        {
+            <a rel="facebook" href="http://facebook.com/@Model.FacebookUsername">@Model.Name</a>
+
+        }
+        else
+        {
+            <a>@Model.Name</a>
+        }
+    }
+            @Model.Bio
+</address>
