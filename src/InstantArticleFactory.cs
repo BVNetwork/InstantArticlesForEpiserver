@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BVNetwork.InstantArticles.Business.Interfaces;
 using EPiServer.Core;
 
 namespace BVNetwork.InstantArticles.Business
 {
-    public class InstantArticleFactory : IInstantArticleFactory<PageData>
+    public class InstantArticleFactory : IInstantArticleFactory
     {
         public IInstantArticle CreateInstantArticle(PageData page)
         {

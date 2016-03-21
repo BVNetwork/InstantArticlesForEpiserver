@@ -191,26 +191,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\ContentExtensions.cs" />
-    <Compile Include="Business\Interfaces\IInstantArticleFactory.cs" />
-    <Compile Include="Business\InstantArticleFactory.cs" />
-    <Compile Include="Business\Interfaces\IInstantArticleImageCreator.cs" />
-    <Compile Include="Business\Interfaces\InstantArticle.cs" />
-    <Compile Include="Business\UrlUtils.cs" />
+    <Compile Include="ContentExtensions.cs" />
+    <Compile Include="IInstantArticleFactory.cs" />
+    <Compile Include="IInstantArticleImageCreator.cs" />
+    <Compile Include="InstantArticle.cs" />
+    <Compile Include="IInstantArticleService.cs" />
+    <Compile Include="UrlUtils.cs" />
     <Compile Include="Controllers\RssPageController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Business\Interfaces\IInstantArticleCreator.cs" />
-    <Compile Include="Business\Interfaces\IInstantArticle.cs" />
-    <Compile Include="Business\Interfaces\IInstantArticleAuthor.cs" />
-    <Compile Include="Business\Interfaces\IInstantArticleImage.cs" />
+    <Compile Include="IInstantArticleCreator.cs" />
+    <Compile Include="IInstantArticle.cs" />
+    <Compile Include="IInstantArticleAuthor.cs" />
+    <Compile Include="IInstantArticleImage.cs" />
     <Compile Include="Models\Pages\RssPage.cs" />
     <Compile Include="Models\ViewModels\RssViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\RssPage\Index.cshtml" />
@@ -232,6 +228,7 @@
   <ItemGroup>
     <Content Include="BVNetwork.InstantArticles.nuspec" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

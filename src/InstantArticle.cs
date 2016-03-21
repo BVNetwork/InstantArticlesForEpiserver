@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using EPiServer.Core;
 
-namespace BVNetwork.InstantArticles.Business.Interfaces
+namespace BVNetwork.InstantArticles
 {
     public class InstantArticle : IInstantArticle
     {
@@ -20,5 +18,14 @@ namespace BVNetwork.InstantArticles.Business.Interfaces
         public Guid ContentGuid { get; set; }
         public DateTime StartPublish { get; set; }
         public DateTime Changed { get; set; }
+
+        public InstantArticle(PageData page)
+        {
+            Title = page.PageName;
+            PageLink = page.PageLink;
+            ContentGuid = page.ContentGuid;
+            StartPublish = page.StartPublish;
+            Changed = page.Changed;
+        }
     }
 }

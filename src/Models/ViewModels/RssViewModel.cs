@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using BVNetwork.InstantArticles.Business.Interfaces;
 using BVNetwork.InstantArticles.Models.Pages;
 
 namespace BVNetwork.InstantArticles.Models.ViewModels

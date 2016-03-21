@@ -1,10 +1,9 @@
 ﻿@using System.Web.Mvc.Html
 @using BVNetwork.InstantArticles.Business
-@using BVNetwork.InstantArticles.Business.Interfaces
 @using EPiServer.Core
 @using EPiServer.Shell
 @using EPiServer.Web.Mvc.Html
-@model BVNetwork.InstantArticles.Business.Interfaces.IInstantArticle
+@model IInstantArticle
 
 @{
     Layout = null;
@@ -72,7 +71,7 @@
                 </header>
 
                 <!-- Article body goes here -->
-                @Html.PropertyFor(x => x.MainBody)
+                @Html.PropertyFor(x => x.Body)
 
                 @*<footer>
                         <!-- Article footer goes here -->

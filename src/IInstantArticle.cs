@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using EPiServer.Core;
 
-namespace BVNetwork.InstantArticles.Business.Interfaces
+namespace BVNetwork.InstantArticles
 {
     public interface IInstantArticle
     {

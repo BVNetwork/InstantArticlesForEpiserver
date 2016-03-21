@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EPiServer;
+﻿using EPiServer;
 using EPiServer.Core;
 
-namespace BVNetwork.InstantArticles.Business
+namespace BVNetwork.InstantArticles
 {
     /// <summary>
     /// Extension methods for content
