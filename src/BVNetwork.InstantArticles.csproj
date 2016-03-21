@@ -280,9 +280,9 @@
     <NuspecFile>$(SolutionDir)\$(ProjectName).nuspec</NuspecFile>
     <ProjectFile>$(SolutionDir)\$(ProjectName).csproj</ProjectFile>
   </PropertyGroup>
-  <Target Name="CreateNugetPackage" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' ">
-    <!-- Create the Versioned out dir for the client resources-->
-    <!-- Copy -->
+  <!--<Target Name="CreateNugetPackage" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' ">
+    --><!-- Create the Versioned out dir for the client resources--><!--
+    --><!-- Copy --><!--
     <ItemGroup>
       <ClientResources Include="$(SolutionDir)\ClientResources\**\*" />
       <Views Include="$(SolutionDir)\Views\**\*" />
@@ -290,16 +290,16 @@
     <Copy SourceFiles="$(SolutionDir)\module.config" DestinationFolder="$(TmpOutDir)\content" />
     <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Copy SourceFiles="@(Views)" DestinationFiles="@(Views -> '$(TmpOutDir)\content\Views\%(RecursiveDir)%(Filename)%(Extension)')" />
-    <!-- Create the Zip file -->
+    --><!-- Create the Zip file --><!--
     <ZipDirectory InputPath="$(TmpOutDir)\content" OutputFileName="$(OutDir)\$(ProjectName).zip" OverwriteExistingFile="true" />
-    <!-- Create the package -->
+    --><!-- Create the package --><!--
     <PropertyGroup>
       <NugetCommand>
         "$(NuGetExe)" pack "$(NuspecFile)" -OutputDirectory "$(OutDir.TrimEnd('\\'))" -Properties Configuration=$(Configuration)
       </NugetCommand>
     </PropertyGroup>
     <Exec Command="$(NugetCommand)" />
-    <!-- Cleanup -->
+    --><!-- Cleanup --><!--
     <RemoveDir Directories="$(TmpOutDir)" />
-  </Target>
+  </Target>-->
 </Project>
