@@ -7,7 +7,7 @@ using EPiServer.Core;
 
 namespace BVNetwork.InstantArticles.Business.Interfaces
 {
-    interface IInstantArticleImageCreator<T>
+    public interface IInstantArticleImageCreator<T>
     {
         IInstantArticleImage CreateInstantArticleImage(BlockData block);
     }
