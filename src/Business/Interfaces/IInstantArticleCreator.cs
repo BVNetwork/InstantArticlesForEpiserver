@@ -2,6 +2,6 @@
 {
     interface IInstantArticleCreator<T>
     {
-        IInstantArticle CreateInstantArticle(T currentPage);
+        IInstantArticle CreateInstantArticle(T page);
     }
 }

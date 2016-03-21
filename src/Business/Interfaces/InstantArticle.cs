@@ -20,13 +20,5 @@ namespace BVNetwork.InstantArticles.Business.Interfaces
         public Guid ContentGuid { get; set; }
         public DateTime StartPublish { get; set; }
         public DateTime Changed { get; set; }
-
-        public InstantArticle(PageData page)
-        {
-            Title = page.PageName;
-            PageLink = page.PageLink;
-            ContentGuid = page.ContentGuid;
-            Changed = page.Changed;
-        }
     }
 }

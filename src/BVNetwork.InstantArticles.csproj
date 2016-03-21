@@ -192,7 +192,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ContentExtensions.cs" />
-    <Compile Include="Business\InstantArticleCreatorCreator.cs" />
+    <Compile Include="Business\InstantArticleCreator.cs" />
+    <Compile Include="Business\Interfaces\IInstantArticleImageCreator.cs" />
     <Compile Include="Business\Interfaces\InstantArticle.cs" />
     <Compile Include="Business\UrlUtils.cs" />
     <Compile Include="Controllers\RssPageController.cs" />
