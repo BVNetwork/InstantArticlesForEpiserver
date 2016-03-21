@@ -7,7 +7,7 @@ using EPiServer.Core;
 
 namespace BVNetwork.InstantArticles.Business
 {
-    public abstract class InstantArticleCreatorBase : IInstantArticleCreator<PageData>
+    public class InstantArticleFactory : IInstantArticleFactory<PageData>
     {
         public IInstantArticle CreateInstantArticle(PageData page)
         {
