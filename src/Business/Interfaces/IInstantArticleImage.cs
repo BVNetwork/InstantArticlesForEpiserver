@@ -1,6 +1,6 @@
 ﻿using EPiServer.Core;
 
-namespace BVNetwork.InstantArticles.Models.Interfaces
+namespace BVNetwork.InstantArticles.Business.Interfaces
 {
     public interface IInstantArticleImage
     {

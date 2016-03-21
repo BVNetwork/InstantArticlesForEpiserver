@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using BVNetwork.InstantArticles.Models.Interfaces;
+using BVNetwork.InstantArticles.Business.Interfaces;
 using BVNetwork.InstantArticles.Models.Pages;
 using BVNetwork.InstantArticles.Models.ViewModels;
 using Castle.Core.Internal;
@@ -36,6 +36,10 @@ namespace BVNetwork.InstantArticles.Controllers
             //// .GetResult();
             //var instantArticles = _contentLoader.GetChildren<IInstantArticle>(ContentReference.StartPage);
             //model.InstantArticles = instantArticles;
+
+
+
+
             var allArticles = new List<PageData>();
             FindAllInstantArticles(allArticles, ContentReference.StartPage);
             model.InstantArticles = allArticles.Cast<IInstantArticle>();

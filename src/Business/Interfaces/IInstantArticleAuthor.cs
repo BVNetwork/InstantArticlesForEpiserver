@@ -1,4 +1,4 @@
-﻿namespace BVNetwork.InstantArticles.Models.Interfaces
+﻿namespace BVNetwork.InstantArticles.Business.Interfaces
 {
     public interface IInstantArticleAuthor
     {
