@@ -2,10 +2,10 @@
 {
     public interface IInstantArticleAuthor
     {
-        string Name { get; }
+        string Name { get; set; }
 
-        string Bio { get; }
+        string Bio { get; set; }
 
-        string FacebookUsername { get; }
+        string FacebookUsername { get; set; }
     }
 }

@@ -31,21 +31,5 @@ namespace BVNetwork.InstantArticles.Controllers
             _contentLoader = contentLoader;
             _instantAricleService = instantArticleService;
         }
-
-        private void FindAllInstantArticles(List<PageData> list, ContentReference parentPage)
-        {
-            var loader = ServiceLocator.Current.GetInstance<IContentLoader>();
-            var children = loader.GetChildren<PageData>(parentPage);
-
-            children.ForEach(pg =>
-            {
-                if (pg is IInstantArticle)
-                {
-                    list.Add(pg);
-                }
-
-                FindAllInstantArticles(list, pg.ContentLink);
-            });
-        }
     }
 }
