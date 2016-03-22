@@ -4,13 +4,13 @@
     @{
         if (Model.FacebookUsername != null)
         {
-            <a rel="facebook" href="http://facebook.com/@Model.FacebookUsername">@Model.Name</a>
+            <a rel="facebook" href="http://facebook.com/@Model.FacebookUsername">@Html.Raw(Model.Name)</a>
 
         }
         else
         {
-            <a>@Model.Name</a>
+            <a>@Html.Raw(Model.Name)</a>
         }
     }
-            @Model.Bio
+    @Html.Raw(Model.Bio)
 </address>

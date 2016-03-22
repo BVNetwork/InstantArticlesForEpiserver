@@ -15,10 +15,9 @@
             @Html.Raw(Model.CurrentPage.RssDescription)
         </description>
         <language>@ContentLanguage.PreferredCulture.Name</language>
-        <lastBuildDate>@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", DateTime.UtcNow); } </lastBuildDate>
+        <lastBuildDate>@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", DateTime.UtcNow); }</lastBuildDate>
         @if (Model.InstantArticles != null)
         {
-
             foreach (var article in Model.InstantArticles)
             {
                 Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/InstantArticleItem.cshtml", article);
