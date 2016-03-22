@@ -6,9 +6,8 @@
 @{
     Layout = null;
 }
-
 <item>
-    <title>@Model.Title</title>
+    <title>@Html.Raw(Model.Title)</title>
     <link>@UrlUtils.GetExternalUrl(Model.PageLink)</link>
     <guid>@Model.ContentGuid</guid>
     <pubDate>@Model.StartPublish</pubDate>
@@ -31,7 +30,6 @@
         </head>
         <body>
             <article>
-
                 <header>
                     @if (Model.Image != null && Model.Image != null)
                     {
@@ -42,35 +40,30 @@
                         </figure>
                     }
                     <!-- The title and subtitle shown in your article -->
-                    <h1> @Model.Title </h1>
+                    <h1>@Html.Raw(Model.Title)</h1>
                     @if (Model.Subtitle != null)
                     {
-                        <h2> @Model.Subtitle </h2>
+                        <h2> @Html.Raw(Model.Subtitle) </h2>
                     }
                     <!-- A kicker for your article -->
                     @if (Model.Kicker != null)
                     {
                         <h3 class="op-kicker">
-                            @Model.Kicker
+                            @Html.Raw(Model.Kicker)
                         </h3>
                     }
-
                     <!-- The author of your article -->
-
                     @{if (Model.Authors != null)
                         {
                             Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/InstantArticleAuthors.cshtml", Model.Authors);
                         }
                     }
-
                     <!-- The published and last modified time stamps -->
                     <time class="op-published" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@Model.StartPublish</time>
                     <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@Model.Changed</time>
                 </header>
-
                 <!-- Article body goes here -->
                 @Html.PropertyFor(x => x.Body)
-
                 @*<footer>
                         <!-- Article footer goes here -->
                     </footer>*@
