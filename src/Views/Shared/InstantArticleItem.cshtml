@@ -2,7 +2,6 @@
 @using EPiServer.Shell
 @using EPiServer.Web.Mvc.Html
 @model BVNetwork.InstantArticles.IInstantArticle
-
 @{
     Layout = null;
 }
@@ -10,7 +9,7 @@
     <title>@Html.Raw(Model.Title)</title>
     <link>@UrlUtils.GetExternalUrl(Model.PageLink)</link>
     <guid>@Model.ContentGuid</guid>
-    <pubDate>@Model.StartPublish</pubDate>
+    <pubDate>@string.Format("{0:f}", Model.StartPublish)</pubDate>
     @if (Model.Authors != null && Model.Authors.Any())
     {
         foreach (var author in Model.Authors)
@@ -59,8 +58,8 @@
                         }
                     }
                     <!-- The published and last modified time stamps -->
-                    <time class="op-published" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@Model.StartPublish.ToShortDateString()</time>
-                    <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@Model.Changed.ToShortDateString()</time>
+                    <time class="op-published" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@string.Format("{0:f}", Model.StartPublish)</time>
+                    <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@string.Format("{0:f}", Model.Changed)</time>
                 </header>
                 <!-- Article body goes here -->
                 @Html.PropertyFor(x => x.Body)
