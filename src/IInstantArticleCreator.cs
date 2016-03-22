@@ -1,7 +1,7 @@
 ﻿namespace BVNetwork.InstantArticles
 {
-    public interface IInstantArticleCreator<T>
+    public interface IInstantArticleCreator
     {
-        IInstantArticle CreateInstantArticle(T page);
+        IInstantArticle CreateInstantArticle();
     }
 }
