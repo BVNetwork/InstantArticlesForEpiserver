@@ -9,6 +9,6 @@ namespace BVNetwork.InstantArticles
 {
     public interface IInstantArticleService
     {
-        IEnumerable<PageData> GetAllInstantArticlePages();
+        IEnumerable<IInstantArticle> GetAllInstantArticles();
     }
 }

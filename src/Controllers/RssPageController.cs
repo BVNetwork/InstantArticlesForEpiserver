@@ -15,39 +15,21 @@ namespace BVNetwork.InstantArticles.Controllers
     public class RssPageController : PageController<RssPage>
     {
         private IContentLoader _contentLoader;
+        private IInstantArticleService _instantAricleService;
 
         public ActionResult Index(RssPage currentPage)
         {
             Response.AddHeader("Content-Type", "application/rss+xml");
             var model = new RssViewModel(currentPage);
-
-            //        var searchResult = SearchClient.Instance.Search<IInstantArticle>()
-            //.For("John")
-            //.InField(x => x.Name)
-            //.GetResult();
-
-            //var articles = SearchClient.Instance.Search<PageData>()
-
-            //    .Filter(x => x.MatchTypeHierarchy(typeof(IInstantArticle)))
-            //   // .Filter(x => ((IInstantArticle)x.ExcludeFromFacebook).Match(false))
-            // .GetContentResult();
-            ////model.InstantArticles = articles.Items
-            //// .GetResult();
-            //var instantArticles = _contentLoader.GetChildren<IInstantArticle>(ContentReference.StartPage);
-            //model.InstantArticles = instantArticles;
-
-
-
-
-            var allArticles = new List<PageData>();
-            FindAllInstantArticles(allArticles, ContentReference.StartPage);
-            model.InstantArticles = allArticles.Cast<IInstantArticle>();
+            var allInstantArticles = _instantAricleService.GetAllInstantArticles();
+            model.InstantArticles = allInstantArticles;
             return View(Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/RssPage/Index.cshtml", model);
         }
 
-        public RssPageController(IContentLoader contentLoader)
+        public RssPageController(IContentLoader contentLoader, IInstantArticleService instantArticleService)
         {
             _contentLoader = contentLoader;
+            _instantAricleService = instantArticleService;
         }
 
         private void FindAllInstantArticles(List<PageData> list, ContentReference parentPage)
