@@ -8,6 +8,6 @@ namespace BVNetwork.InstantArticles
 {
     public interface IInstantArticleAuthorContent
     {
-        IInstantArticle CreateInstantArticleAuthor();
+        IInstantArticleAuthor CreateInstantArticleAuthor();
     }
 }
