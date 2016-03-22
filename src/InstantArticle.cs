@@ -8,7 +8,7 @@ namespace BVNetwork.InstantArticles
     {
         public string Title { get; set; }
         public string Subtitle { get; set; }
-        public IList<ContentReference> Authors { get; set; }
+        public IEnumerable<IInstantArticleAuthor> Authors { get; set; }
         public string Kicker { get; set; }
         public ContentReference Image { get; set; }
         public string ImageCaption { get; set; }

@@ -15,7 +15,7 @@ namespace BVNetwork.InstantArticles
 
         //string Description { get; set; }
 
-        IList<ContentReference> Authors { get; set; }
+        IEnumerable<IInstantArticleAuthor> Authors { get; set; }
 
         string Kicker { get; set; }
 
