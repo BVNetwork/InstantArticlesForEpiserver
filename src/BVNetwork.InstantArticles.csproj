@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentExtensions.cs" />
+    <Compile Include="IInstantArticleAuthorContent.cs" />
     <Compile Include="IInstantArticleImageBlock.cs" />
     <Compile Include="InstantArticle.cs" />
     <Compile Include="IInstantArticleService.cs" />
