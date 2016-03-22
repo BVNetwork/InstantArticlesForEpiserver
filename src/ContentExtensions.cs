@@ -18,5 +18,18 @@ namespace BVNetwork.InstantArticles
         {
             return DataFactory.Instance.Get<TContent>(contentLink);
         }
+
+        public static IInstantArticle CreateInstantArticle(this IContent content)
+        {
+            var page = content as PageData;
+            return new InstantArticle()
+            {
+                Title = page.PageName,
+                PageLink = page.PageLink,
+                ContentGuid = page.ContentGuid,
+                StartPublish = page.StartPublish,
+                Changed = page.Changed
+            };
+        }
     }
 }
