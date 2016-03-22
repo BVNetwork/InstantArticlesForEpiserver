@@ -192,12 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentExtensions.cs" />
-    <Compile Include="IInstantArticleImageCreator.cs" />
+    <Compile Include="IInstantArticleImageBlock.cs" />
     <Compile Include="InstantArticle.cs" />
     <Compile Include="IInstantArticleService.cs" />
     <Compile Include="UrlUtils.cs" />
     <Compile Include="Controllers\RssPageController.cs" />
-    <Compile Include="IInstantArticleCreator.cs" />
+    <Compile Include="IInstantArticlePage.cs" />
     <Compile Include="IInstantArticle.cs" />
     <Compile Include="IInstantArticleAuthor.cs" />
     <Compile Include="IInstantArticleImage.cs" />
