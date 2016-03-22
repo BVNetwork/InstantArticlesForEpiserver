@@ -19,7 +19,7 @@ namespace BVNetwork.InstantArticles
             return DataFactory.Instance.Get<TContent>(contentLink);
         }
 
-        public static IInstantArticle CreateInstantArticle(this IContent content)
+        public static IInstantArticle CreateInstantArticleBase(this IContent content)
         {
             var page = content as PageData;
             return new InstantArticle()
