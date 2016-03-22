@@ -5,7 +5,7 @@ using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
 
-namespace BVNetwork.InstantArticles.Business
+namespace BVNetwork.InstantArticles
 {
     public static class UrlUtils
     {
