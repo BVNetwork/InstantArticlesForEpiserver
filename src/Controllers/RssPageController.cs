@@ -20,6 +20,7 @@ namespace BVNetwork.InstantArticles.Controllers
         public ActionResult Index(RssPage currentPage)
         {
             Response.AddHeader("Content-Type", "application/rss+xml");
+            Response.AddHeader("meta charset", "utf-8"); 
             var model = new RssViewModel(currentPage);
             var allInstantArticles = _instantAricleService.GetAllInstantArticles();
             model.InstantArticles = allInstantArticles;
