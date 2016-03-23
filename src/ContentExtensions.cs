@@ -34,9 +34,22 @@ namespace BVNetwork.InstantArticles
             };
         }
 
-        public static MvcHtmlString GetCanonicalLink(this ContentReference contentRef)
+        //public static MvcHtmlString GetCanonicalLink(this ContentReference contentRef)
+        //{
+        //    return CanonicalLinkExtensions.CanonicalLink(null, (ContentReference) contentRef, (string) null, (string) null);
+        //}
+
+        /// <summary>
+        /// Renders a canonical link element for the current context.
+        /// 
+        /// </summary>
+        /// <param name="html">The HTML.</param>
+        /// <returns>
+        /// A canonical link element with the canonical url for the current context.
+        /// </returns>
+        public static MvcHtmlString CanonicalLink(this HtmlHelper html, ContentReference contentReference)
         {
-            return CanonicalLinkExtensions.CanonicalLink(null, (ContentReference) contentRef, (string) null, (string) null);
+            return CanonicalLinkExtensions.CanonicalLink(html, contentReference, (string)null, (string)null);
         }
     }
 }
