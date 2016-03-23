@@ -11,6 +11,5 @@ namespace BVNetwork.InstantArticles
     public interface IInstantArticleService
     {
         IEnumerable<IInstantArticle> GetAllInstantArticles();
-        RssPage GetRssPage();
     }
 }
