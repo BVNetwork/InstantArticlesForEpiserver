@@ -1,5 +1,7 @@
-﻿using EPiServer;
+﻿using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
+using EPiServer.Web.Mvc.Html;
 
 namespace BVNetwork.InstantArticles
 {
@@ -30,6 +32,11 @@ namespace BVNetwork.InstantArticles
                 StartPublish = page.StartPublish,
                 Changed = page.Changed
             };
+        }
+
+        public static MvcHtmlString GetCanonicalLink(this ContentReference contentRef)
+        {
+            return CanonicalLinkExtensions.CanonicalLink(null, (ContentReference) contentRef, (string) null, (string) null);
         }
     }
 }
