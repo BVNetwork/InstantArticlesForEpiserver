@@ -25,7 +25,7 @@
         <html lang="@ContentLanguage.PreferredCulture.Name" prefix="op: http://media.facebook.com/op#">
         <head>
             <meta charset="utf-8">
-            <link rel="canonical" href="@Html.CanonicalLink(Model.PageLink)">
+            <link rel="canonical" href="@UrlUtils.GetExternalUrl(Model.PageLink)">
             <meta property="op:markup_version" content="v1.0">
             <!-- The style to be used for this article -->
             <meta property="fb:article_style" content="@Model.Article">
