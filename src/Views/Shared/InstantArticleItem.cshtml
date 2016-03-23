@@ -28,8 +28,14 @@
             <link rel="canonical" href="@UrlUtils.GetExternalUrl(Model.PageLink)">
             <meta property="op:markup_version" content="v1.0">
             <!-- The style to be used for this article -->
-            <meta property="fb:article_style" content="@Model.Article">
-             
+            @{
+                var style = System.Configuration.ConfigurationManager.AppSettings["myKey"];
+            }
+            @if (style != null)
+            {
+                <meta property="fb:article_style" content="@style">
+            }
+
         </head>
         <body>
             <article>

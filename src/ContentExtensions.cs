@@ -47,9 +47,9 @@ namespace BVNetwork.InstantArticles
         /// <returns>
         /// A canonical link element with the canonical url for the current context.
         /// </returns>
-        public static MvcHtmlString CanonicalLink(this HtmlHelper html, ContentReference contentReference)
-        {
-            return CanonicalLinkExtensions.CanonicalLink(html, contentReference, (string)null, (string)null);
-        }
+        //public static MvcHtmlString CanonicalLink(this HtmlHelper html, ContentReference contentReference)
+        //{
+        //    return CanonicalLinkExtensions.CanonicalLink(html, contentReference, (string)null, (string)null);
+        //}
     }
 }
