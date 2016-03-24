@@ -201,6 +201,7 @@
     <Compile Include="InstantArticle.cs" />
     <Compile Include="IInstantArticleService.cs" />
     <Compile Include="InstantArticleAuthor.cs" />
+    <Compile Include="InstantArticleImage.cs" />
     <Compile Include="TemplateCoordinator.cs" />
     <Compile Include="UrlUtils.cs" />
     <Compile Include="Controllers\RssPageController.cs" />
