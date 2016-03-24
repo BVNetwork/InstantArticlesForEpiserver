@@ -28,7 +28,7 @@ namespace BVNetwork.InstantArticles
                 Tags = new[] { "InstantArticle" },
                 AvailableWithoutTag = false,
                 Inherit = true,
-                Path = "~/modules/BVNetwork.InstantArticles/Views/Shared/Blocks/InstantArticleImageBlock.cshtml"
+                Path = BlockPath("InstantArticleImageBlock.cshtml")
             });
 
         }
