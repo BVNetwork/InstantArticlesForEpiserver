@@ -1,0 +1,12 @@
+﻿@model IInstantArticleImageBlock
+@{
+    var instantArticleImage = Model != null ? Model.CreateInstantArticleImage() : null;
+
+    if (instantArticleImage != null)
+    {
+        <figure>
+            <img src="@Url.ContentUrl(instantArticleImage.Image)" alt="" class="img-responsive" />
+            <figcaption>@Html.Raw(instantArticleImage.ImageCaption)</figcaption>
+        </figure>
+    }
+}

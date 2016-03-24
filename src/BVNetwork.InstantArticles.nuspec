@@ -16,6 +16,7 @@
       <dependencies>
         <dependency id="EPiServer.CMS.UI.Core" version="[9.0.0, 10.0)" />
         <dependency id="EPiServer.Framework" version="[9.0.0, 10.0)" />
+        <dependency id="HtmlAgilityPack" version="[1.4.9, 2.0.0)" />
       </dependencies>
     </metadata>
     <files>
