@@ -28,7 +28,14 @@ namespace BVNetwork.InstantArticles.Controllers
             Response.AddHeader("meta charset", "utf-8");
 
             var model = new RssViewModel(currentPage);
-            var allInstantArticles = _instantAricleService.GetAllInstantArticles();
+            var allInstantArticlePages = _instantAricleService.GetAllInstantArticlePages();
+
+            var allInstantArticles = new List<IInstantArticle>();
+
+            foreach (var instantArticlePage in allInstantArticlePages)
+            {
+                allInstantArticles.Add(instantArticlePage.CreateInstantArticle());
+            }
 
             logger.Debug("Found {0} instant articles", allInstantArticles.Count());
 
@@ -118,6 +125,8 @@ namespace BVNetwork.InstantArticles.Controllers
         {
             if (source == null)
                 return null;
+            source = source.Replace("<p>&nbsp;</p>", "");
+
             HtmlDocument html = GetHtml(source);
             if (html == null) return String.Empty;
 
