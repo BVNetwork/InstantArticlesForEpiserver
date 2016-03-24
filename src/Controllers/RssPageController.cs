@@ -29,7 +29,9 @@ namespace BVNetwork.InstantArticles.Controllers
 
             var model = new RssViewModel(currentPage);
             var allInstantArticles = _instantAricleService.GetAllInstantArticles();
+
             logger.Debug("Found {0} instant articles", allInstantArticles.Count());
+
             SanitizeBodyHtml(allInstantArticles);
             model.InstantArticles = allInstantArticles;
 
@@ -59,13 +61,8 @@ namespace BVNetwork.InstantArticles.Controllers
         private static readonly Dictionary<string, string[]> ValidHtmlTags =
             new Dictionary<string, string[]>
             {
-
-
-
-
-
             {"p", new string[]            {}},
-            //{"div", new string[]        {"*"}},
+            {"div", new string[]          {"*"}},
             //{"span", new string[]       {"style", "class", }},
             //{"br", new string[]         {"style", "class"}},
             //{"hr", new string[]         {"style", "class"}},
