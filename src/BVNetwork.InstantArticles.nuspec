@@ -23,6 +23,7 @@
         <file src="bin\$configuration$\BVNetwork.InstantArticles.dll" target="lib\net45\" />
       <file src="Views\RssPage\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\RssPage\" />
       <file src="Views\Shared\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\" />
+      <file src="Views\Shared\Blocks\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\" />
       <file src="Views\*.config" target="content\modules\BVNetwork.InstantArticles\Views\" />
         <!--<file src="bin\$configuration$\BVNetwork.InstantArticles.zip" target="content\modules\BVNetwork.InstantArticles\" />-->
     </files>
