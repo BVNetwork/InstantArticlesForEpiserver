@@ -61,19 +61,19 @@ namespace BVNetwork.InstantArticles.Controllers
         private static readonly Dictionary<string, string[]> ValidHtmlTags =
             new Dictionary<string, string[]>
             {
-            {"p", new string[]            {}},
+            {"p", new string[]            {"noAttribute"}},
             {"div", new string[]          {"*"}},
             //{"span", new string[]       {"style", "class", }},
             //{"br", new string[]         {"style", "class"}},
             //{"hr", new string[]         {"style", "class"}},
             //{"label", new string[]      {"style", "class"}},
 
-            {"h1", new string[]           {}},
-            {"h2", new string[]           {}},
-            {"h3", new string[]           {}},
-            {"h4", new string[]           {}},
-            {"h5", new string[]           {}},
-            {"h6", new string[]           {}},
+            {"h1", new string[]           {"noAttribute"}},
+            {"h2", new string[]           {"noAttribute"}},
+            {"h3", new string[]           {"noAttribute"}},
+            {"h4", new string[]           {"noAttribute"}},
+            {"h5", new string[]           {"noAttribute"}},
+            {"h6", new string[]           {"noAttribute"}},
 
             //{"font", new string[]       {"style", "class", "color", "face", "size"}},
             //{"strong", new string[]     {"style", "class"}},
@@ -82,13 +82,13 @@ namespace BVNetwork.InstantArticles.Controllers
             //{"i", new string[]          {"style", "class"}},
             //{"u", new string[]          {"style", "class"}},
             //{"strike", new string[]     {"style", "class"}},
-            {"ol", new string[]           {}},
-            {"ul", new string[]           {}},
-            {"li", new string[]           {}},
-            {"blockquote", new string[]   {}},
+            {"ol", new string[]           {"noAttribute"}},
+            {"ul", new string[]           {"noAttribute"}},
+            {"li", new string[]           {"noAttribute"}},
+            {"blockquote", new string[]   {"noAttribute"}},
             //{"code", new string[]       {"style", "class"}},
 
-            {"a", new string[]            {}},
+            {"a", new string[]            {"noAttribute"}},
             //{"img", new string[]        {"style", "class", "src", "height", "width",
             //    "alt", "title", "hspace", "vspace", "border"}},
 
@@ -101,8 +101,8 @@ namespace BVNetwork.InstantArticles.Controllers
             //{"td", new string[]         {"style", "class", "colspan"}},
 
             //{"q", new string[]          {"style", "class", "cite"}},
-            {"cite", new string[]         {}},
-            {"aside", new string[]        {}},
+            {"cite", new string[]         {"noAttribute"}},
+            {"aside", new string[]        {"noAttribute"}},
             //{"abbr", new string[]       {"style", "class"}},
             //{"acronym", new string[]    {"style", "class"}},
             //{"del", new string[]        {"style", "class"}},
