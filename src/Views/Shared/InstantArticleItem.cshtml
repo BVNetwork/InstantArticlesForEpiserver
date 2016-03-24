@@ -72,7 +72,7 @@
                     <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@string.Format("{0:f}", Model.Changed)</time>
                 </header>
                 <!-- Article body goes here -->
-                @Html.PropertyFor(x => x.Body)
+                @Html.PropertyFor(x => x.Body, new { Tag = "InstantArticle" })
                 @*<footer>
                         <!-- Article footer goes here -->
                     </footer>*@
