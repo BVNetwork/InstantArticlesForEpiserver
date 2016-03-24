@@ -24,10 +24,11 @@ namespace BVNetwork.InstantArticles
         {
             viewTemplateModelRegistrator.Add(typeof(IInstantArticleImageBlock), new TemplateModel
             {
-                Name = "InstantArticleImageBlock",
+                Name = "IInstantArticleImageBlock",
                 Tags = new[] { "InstantArticle" },
                 AvailableWithoutTag = false,
-                Path = BlockPath("InstantArticleImageBlock.cshtml")
+                Inherit = true,
+                Path = "~/modules/BVNetwork.InstantArticles/Views/Shared/Blocks/InstantArticleImageBlock.cshtml"
             });
 
         }
