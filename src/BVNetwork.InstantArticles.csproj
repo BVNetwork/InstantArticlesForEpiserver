@@ -196,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentExtensions.cs" />
+    <Compile Include="HtmlUtility.cs" />
     <Compile Include="IInstantArticleAuthorContent.cs" />
     <Compile Include="IInstantArticleImageBlock.cs" />
     <Compile Include="InstantArticle.cs" />
