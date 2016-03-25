@@ -70,50 +70,20 @@ namespace BVNetwork.InstantArticles.Controllers
             {
             {"p", new string[]            {}},
             {"div", new string[]          {"*"}},
-            //{"span", new string[]       {"style", "class", }},
-            //{"br", new string[]         {"style", "class"}},
-            //{"hr", new string[]         {"style", "class"}},
-            //{"label", new string[]      {"style", "class"}},
-
             {"h1", new string[]           {}},
             {"h2", new string[]           {}},
             {"h3", new string[]           {}},
             {"h4", new string[]           {}},
             {"h5", new string[]           {}},
             {"h6", new string[]           {}},
-
-            //{"font", new string[]       {"style", "class", "color", "face", "size"}},
-            //{"strong", new string[]     {"style", "class"}},
-            //{"b", new string[]          {"style", "class"}},
-            //{"em", new string[]         {"style", "class"}},
-            //{"i", new string[]          {"style", "class"}},
-            //{"u", new string[]          {"style", "class"}},
-            //{"strike", new string[]     {"style", "class"}},
             {"ol", new string[]           {}},
             {"ul", new string[]           {}},
             {"li", new string[]           {}},
             {"blockquote", new string[]   {}},
-            //{"code", new string[]       {"style", "class"}},
-
             {"a", new string[]            {}},
-            //{"img", new string[]        {"style", "class", "src", "height", "width",
-            //    "alt", "title", "hspace", "vspace", "border"}},
-
-            //{"table", new string[]      {"style", "class"}},
-            //{"thead", new string[]      {"style", "class"}},
-            //{"tbody", new string[]      {"style", "class"}},
-            //{"tfoot", new string[]      {"style", "class"}},
-            //{"th", new string[]         {"style", "class", "scope"}},
-            //{"tr", new string[]         {"style", "class"}},
-            //{"td", new string[]         {"style", "class", "colspan"}},
-
-            //{"q", new string[]          {"style", "class", "cite"}},
             {"cite", new string[]         {}},
             {"aside", new string[]        {}},
-            //{"abbr", new string[]       {"style", "class"}},
-            //{"acronym", new string[]    {"style", "class"}},
-            //{"del", new string[]        {"style", "class"}},
-            //{"ins", new string[]        {"style", "class"}}
+            
             };
 
         /// <summary>
