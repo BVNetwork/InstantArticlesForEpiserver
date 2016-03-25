@@ -38,7 +38,7 @@ namespace BVNetwork.InstantArticles.Controllers
 
             logger.Debug("Found {0} instant articles", allInstantArticles.Count());
 
-            HtmlUtility.SanitizeBodyHtml(allInstantArticles);
+            HtmlUtils.SanitizeBodyHtml(allInstantArticles);
             model.InstantArticles = allInstantArticles;
 
             SetResposneHeaders();

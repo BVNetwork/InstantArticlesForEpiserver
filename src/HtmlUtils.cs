@@ -10,7 +10,7 @@ using HtmlAgilityPack;
 
 namespace BVNetwork.InstantArticles
 {
-    public static class HtmlUtility
+    public static class HtmlUtils
     {
 
         private static readonly Dictionary<string, string[]> ValidHtmlTags =
