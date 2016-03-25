@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
 using BVNetwork.InstantArticles.Models.Pages;
 using BVNetwork.InstantArticles.Models.ViewModels;
@@ -16,6 +17,7 @@ using HtmlAgilityPack;
 
 namespace BVNetwork.InstantArticles.Controllers
 {
+    [ContentOutputCache]
     public class RssPageController : PageController<RssPage>
     {
         private static readonly ILogger logger = LogManager.GetLogger();
@@ -24,10 +26,7 @@ namespace BVNetwork.InstantArticles.Controllers
 
         public ActionResult Index(RssPage currentPage)
         {
-            Response.AddHeader("Content-Type", "application/rss+xml");
-            Response.AddHeader("meta charset", "utf-8");
-
-            var model = new RssViewModel(currentPage);
+           var model = new RssViewModel(currentPage);
             var allInstantArticlePages = _instantAricleService.GetAllInstantArticlePages();
 
             var allInstantArticles = new List<IInstantArticle>();
@@ -42,7 +41,18 @@ namespace BVNetwork.InstantArticles.Controllers
             SanitizeBodyHtml(allInstantArticles);
             model.InstantArticles = allInstantArticles;
 
+            SetResposneHeaders();
+
             return View(Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/RssPage/Index.cshtml", model);
+        }
+
+        public void SetResposneHeaders()
+        {
+            Response.AddHeader("Content-Type", "application/rss+xml");
+            Response.AddHeader("meta charset", "utf-8");
+            HttpContext.Response.Cache.SetExpires(DateTime.Now.AddMinutes(3.0));
+            HttpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
+            HttpContext.Response.Cache.SetValidUntilExpires(true);
         }
 
         private void SanitizeBodyHtml(IEnumerable<IInstantArticle> allInstantArticles)
@@ -97,6 +107,8 @@ namespace BVNetwork.InstantArticles.Controllers
                 return null;
             source = source.Replace("<p>&nbsp;</p>", "");
 
+           
+
             HtmlDocument html = GetHtml(source);
             if (html == null) return String.Empty;
 
@@ -143,9 +155,11 @@ namespace BVNetwork.InstantArticles.Controllers
                     }
                 }
             }
+            RemoveNestedParagraphElements(allNodes);
 
             return allNodes.InnerHtml;
         }
+
 
         /// <summary>
         /// Recursively delete nodes not in the whitelist
@@ -187,6 +201,26 @@ namespace BVNetwork.InstantArticles.Controllers
             html.LoadHtml(source);
 
             return html;
+        }
+
+        /// <summary>
+        /// Removed nested <p></p>-elements
+        /// </summary>
+        /// <param name="allNodes"></param>
+        private static void RemoveNestedParagraphElements(HtmlNode allNodes)
+        {
+
+            var pTags = allNodes.SelectNodes("//p");
+            if (pTags != null)
+            {
+                foreach (var tag in pTags)
+                {
+                    if (tag.InnerText.IsNullOrEmpty())
+                    {
+                        tag.ParentNode.RemoveChild(tag, true);
+                    }
+                }
+            }
         }
     }
 }
