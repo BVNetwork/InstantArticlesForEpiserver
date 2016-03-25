@@ -7,6 +7,7 @@ using EPiServer.Web;
 namespace BVNetwork.InstantArticles.Models.Pages
 {
     [ContentType(DisplayName = "Instant Article RSS Page", GUID = "4d135fa2-e22d-45b1-9ad3-a1e67c57232e", Description = "Facebook instant article RSS feed")]
+    [ImageUrl("~/modules/BVNetwork.InstantArticles/Resources/FacebookInstantArticlesLogo.png")]
     public class RssPage : PageData
     {
 
