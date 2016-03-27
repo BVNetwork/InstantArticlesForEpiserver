@@ -1,6 +1,4 @@
 ﻿<?xml version="1.0"?>
-<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-  <clientResources>
-    <add name="epi-cms.widgets.base" path="../modules/BVNetwork.InstantArticles/Resources/Styles/InstantArticles.css" resourceType="Style" xdt:Transform="Remove" xdt:Locator="Match(path)" />
-  </clientResources>
-</configuration>
+<clientResources>
+  <add name="epi-cms.widgets.base" path="../modules/BVNetwork.InstantArticles/Resources/Styles/InstantArticles.css" resourceType="Style" xdt:Transform="Remove" xdt:Locator="Match(path)" />
+</clientResources>
