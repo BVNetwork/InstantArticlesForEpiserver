@@ -10,7 +10,8 @@ namespace BVNetwork.InstantArticles
 {
     public interface IInstantArticleService
     {
-     //   IEnumerable<IInstantArticle> GetAllInstantArticles();
         IEnumerable<IInstantArticlePage> GetAllInstantArticlePages();
+
+        RssPage GetRssPage();
     }
 }

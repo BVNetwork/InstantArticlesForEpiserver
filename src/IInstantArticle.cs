@@ -25,6 +25,14 @@ namespace BVNetwork.InstantArticles
 
         XhtmlString Body { get; set; }
 
+        /// <summary>
+        /// Article style
+        /// </summary>
+        /// <remarks>
+        /// The  style to be used for this article. Set up the style on your Facebook page.
+        /// </remarks>
+        string ArticleStyle { get; set; }
+
         bool ExcludeFromFacebook { get; set; }
 
         PageReference PageLink { get; set; }

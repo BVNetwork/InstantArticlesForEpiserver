@@ -18,8 +18,8 @@ namespace BVNetwork.InstantArticles.Models.Pages
         [UIHint(UIHint.Textarea)]
         public virtual string RssDescription { get; set; }
 
-        [Display(Name = "Article style", Description = "The default style to be used for articles in this feed", GroupName = SystemTabNames.Content, Order = 40)]
-        public virtual string ArticleStyle { get; set; }
+        [Display(Name = "Default article style", Description = "The default style to be used for articles in this feed", GroupName = SystemTabNames.Content, Order = 40)]
+        public virtual string DefaultArticleStyle { get; set; }
 
 
 

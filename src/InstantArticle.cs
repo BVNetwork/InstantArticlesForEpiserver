@@ -13,6 +13,7 @@ namespace BVNetwork.InstantArticles
         public ContentReference Image { get; set; }
         public string ImageCaption { get; set; }
         public XhtmlString Body { get; set; }
+        public string ArticleStyle { get; set; }
         public bool ExcludeFromFacebook { get; set; }
         public PageReference PageLink { get; set; }
         public Guid ContentGuid { get; set; }
