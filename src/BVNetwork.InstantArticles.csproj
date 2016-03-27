@@ -218,7 +218,7 @@
   <ItemGroup>
     <Content Include="Resources\Images\FacebookInstantArticlesLogo.png" />
     <Content Include="Resources\Images\Feed-icon-16x16.png" />
-    <Content Include="Resources\Styles\InstantArticle.css" />
+    <Content Include="Resources\Styles\InstantArticles.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
