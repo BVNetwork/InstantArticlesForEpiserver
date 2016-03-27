@@ -246,13 +246,8 @@
     <Content Include="Views\Shared\Blocks\InstantArticleImageBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="InstallationResources\" />
     <Folder Include="Views\InstantArticleRssPage\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="InstallationResources\module.config.install.xdt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="InstallationResources\module.config.uninstall.xdt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
