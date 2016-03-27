@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <clientResources>
-    <add name="epi-cms.widgets.base" path="Styles/InstantArticle.css.css" resourceType="Style" xdt:Transform="Insert" />
+    <add name="epi-cms.widgets.base" path="Styles/InstantArticle.css" resourceType="Style" xdt:Transform="Insert" />
   </clientResources>
 </configuration>
