@@ -25,7 +25,7 @@
       <file src="Views\Shared\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\" />
       <file src="Views\Shared\Blocks\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\Blocks\" />
       <file src="Views\*.config" target="content\modules\BVNetwork.InstantArticles\Views\" />
-      <file src="Resources\*.*" target="content\modules\BVNetwork.InstantArticles\Resources\" />
+      <file src="Resources\**\*.*" target="content\modules\BVNetwork.InstantArticles\Resources\" />
         <!--<file src="bin\$configuration$\BVNetwork.InstantArticles.zip" target="content\modules\BVNetwork.InstantArticles\" />-->
     </files>
 </package>
