@@ -33,7 +33,7 @@ namespace BVNetwork.InstantArticles.Controllers
 
             foreach (var instantArticlePage in allInstantArticlePages)
             {
-                allInstantArticles.Add(instantArticlePage.CreateInstantArticle());
+                allInstantArticles.Add(instantArticlePage.CreateInstantArticle(currentPage));
             }
 
             logger.Debug("Found {0} instant articles", allInstantArticles.Count());
