@@ -204,6 +204,7 @@
     <Compile Include="InstantArticleAuthor.cs" />
     <Compile Include="InstantArticleImage.cs" />
     <Compile Include="TemplateCoordinator.cs" />
+    <Compile Include="UIDescriptors\RssPageUIDescriptor.cs" />
     <Compile Include="UrlUtils.cs" />
     <Compile Include="Controllers\RssPageController.cs" />
     <Compile Include="IInstantArticlePage.cs" />
@@ -215,10 +216,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\FacebookInstantArticlesLogo.png" />
+    <Content Include="Resources\Images\FacebookInstantArticlesLogo.png" />
+    <Content Include="Resources\Images\Feed-icon-16x16.png" />
+    <Content Include="Resources\Styles\InstantArticle.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\RssPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="module.config" />
@@ -237,9 +239,20 @@
   <ItemGroup>
     <Content Include="BVNetwork.InstantArticles.nuspec" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\RssPage\Index.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Blocks\InstantArticleImageBlock.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\InstantArticleRssPage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InstallationResources\module.config.install.xdt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InstallationResources\module.config.uninstall.xdt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
