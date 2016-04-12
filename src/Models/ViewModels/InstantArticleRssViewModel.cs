@@ -3,12 +3,12 @@ using BVNetwork.InstantArticles.Models.Pages;
 
 namespace BVNetwork.InstantArticles.Models.ViewModels
 {
-    public class RssViewModel
+    public class InstantArticleRssViewModel
     {
-        public RssPage CurrentPage;
+        public InstantArticleRssPage CurrentPage;
         public IEnumerable<IInstantArticle> InstantArticles { get; set; }
 
-        public RssViewModel(RssPage rssPage)
+        public InstantArticleRssViewModel(InstantArticleRssPage rssPage)
         {
             CurrentPage = rssPage;
         }

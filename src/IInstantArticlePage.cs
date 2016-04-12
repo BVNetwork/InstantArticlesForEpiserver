@@ -5,7 +5,7 @@ namespace BVNetwork.InstantArticles
     public interface IInstantArticlePage
     {
         bool ExcludeFromFacebook { get; set; }
-        IInstantArticle CreateInstantArticle(RssPage rssPage);
+        IInstantArticle CreateInstantArticle(InstantArticleRssPage rssPage);
        
     }
 }

@@ -204,15 +204,15 @@
     <Compile Include="InstantArticleAuthor.cs" />
     <Compile Include="InstantArticleImage.cs" />
     <Compile Include="TemplateCoordinator.cs" />
-    <Compile Include="UIDescriptors\RssPageUIDescriptor.cs" />
+    <Compile Include="UIDescriptors\InstantArticleRssPageUIDescriptor.cs" />
     <Compile Include="UrlUtils.cs" />
-    <Compile Include="Controllers\RssPageController.cs" />
+    <Compile Include="Controllers\InstantArticleRssPageController.cs" />
     <Compile Include="IInstantArticlePage.cs" />
     <Compile Include="IInstantArticle.cs" />
     <Compile Include="IInstantArticleAuthor.cs" />
     <Compile Include="IInstantArticleImage.cs" />
-    <Compile Include="Models\Pages\RssPage.cs" />
-    <Compile Include="Models\ViewModels\RssViewModel.cs" />
+    <Compile Include="Models\Pages\InstantArticleRssPage.cs" />
+    <Compile Include="Models\ViewModels\InstantArticleRssViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,14 +239,13 @@
     <Content Include="BVNetwork.InstantArticles.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\RssPage\Index.cshtml" />
+    <Content Include="Views\InstantArticleRssPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Blocks\InstantArticleImageBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InstallationResources\" />
-    <Folder Include="Views\InstantArticleRssPage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

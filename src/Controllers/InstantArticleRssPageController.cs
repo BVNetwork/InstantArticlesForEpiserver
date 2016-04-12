@@ -18,15 +18,15 @@ using HtmlAgilityPack;
 namespace BVNetwork.InstantArticles.Controllers
 {
     [ContentOutputCache]
-    public class RssPageController : PageController<RssPage>
+    public class InstantArticleRssPageController : PageController<InstantArticleRssPage>
     {
         private static readonly ILogger logger = LogManager.GetLogger();
         private IContentLoader _contentLoader;
         private IInstantArticleService _instantAricleService;
 
-        public ActionResult Index(RssPage currentPage)
+        public ActionResult Index(InstantArticleRssPage currentPage)
         {
-            var model = new RssViewModel(currentPage);
+            var model = new InstantArticleRssViewModel(currentPage);
             var allInstantArticlePages = _instantAricleService.GetAllInstantArticlePages();
 
             var allInstantArticles = new List<IInstantArticle>();
@@ -55,7 +55,7 @@ namespace BVNetwork.InstantArticles.Controllers
             HttpContext.Response.Cache.SetValidUntilExpires(true);
         }
 
-        public RssPageController(IContentLoader contentLoader, IInstantArticleService instantArticleService)
+        public InstantArticleRssPageController(IContentLoader contentLoader, IInstantArticleService instantArticleService)
         {
             _contentLoader = contentLoader;
             _instantAricleService = instantArticleService;

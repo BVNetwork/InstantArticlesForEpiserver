@@ -12,6 +12,6 @@ namespace BVNetwork.InstantArticles
     {
         IEnumerable<IInstantArticlePage> GetAllInstantArticlePages();
 
-        RssPage GetRssPage();
+        InstantArticleRssPage GetInstantArticleRssPage();
     }
 }
