@@ -21,7 +21,7 @@
     </metadata>
     <files>
         <file src="bin\$configuration$\BVNetwork.InstantArticles.dll" target="lib\net45\" />
-      <file src="Views\RssPage\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\RssPage\" />
+      <file src="Views\InstantArticleRssPage\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\RssPage\" />
       <file src="Views\Shared\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\" />
       <file src="Views\Shared\Blocks\*.cshtml" target="content\modules\BVNetwork.InstantArticles\Views\Shared\Blocks\" />
       <file src="Views\*.config" target="content\modules\BVNetwork.InstantArticles\Views\" />
