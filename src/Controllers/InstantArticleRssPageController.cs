@@ -49,7 +49,6 @@ namespace BVNetwork.InstantArticles.Controllers
         public void SetResposneHeaders()
         {
             Response.AddHeader("Content-Type", "application/rss+xml");
-            Response.AddHeader("meta charset", "utf-8");
             HttpContext.Response.Cache.SetExpires(DateTime.Now.AddMinutes(3.0));
             HttpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
             HttpContext.Response.Cache.SetValidUntilExpires(true);
