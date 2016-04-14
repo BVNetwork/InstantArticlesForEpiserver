@@ -37,8 +37,8 @@
                     {
                     <!-- The cover image shown inside your article -->
                         <figure>
-                            <img src="@UrlUtils.GetExternalUrl(Model.Image)" />
-                            <figcaption>@Model.ImageCaption</figcaption>
+                            <img src="@UrlUtils.GetExternalUrl(Model.Image)"/>
+                            <figcaption>@Html.Raw(Model.ImageCaption)</figcaption>                           
                         </figure>
                     }
                     <!-- The title and subtitle shown in your article -->
