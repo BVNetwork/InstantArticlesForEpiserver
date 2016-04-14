@@ -28,7 +28,7 @@ namespace BVNetwork.InstantArticles
             {"ul", new string[]           {}},
             {"li", new string[]           {}},
             {"blockquote", new string[]   {}},
-            {"a", new string[]            {}},
+            {"a", new string[]            {"*"}},
             {"cite", new string[]         {}},
             {"aside", new string[]        {}},
 
