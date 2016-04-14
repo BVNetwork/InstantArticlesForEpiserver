@@ -27,7 +27,7 @@
             <meta charset="utf-8">
             <link rel="canonical" href="@UrlUtils.GetExternalUrl(Model.PageLink)">
             <meta property="op:markup_version" content="v1.0">
-            <!-- The style to be used for this article -->
+             @*The style to be used for this article*@ 
             <meta property="fb:article_style" content="@Model.ArticleStyle">
         </head>
         <body>
@@ -35,36 +35,35 @@
                 <header>
                     @if (Model.Image != null && Model.Image != null)
                     {
-                    <!-- The cover image shown inside your article -->
                         <figure>
                             <img src="@UrlUtils.GetExternalUrl(Model.Image)"/>
                             <figcaption>@Html.Raw(Model.ImageCaption)</figcaption>                           
                         </figure>
                     }
-                    <!-- The title and subtitle shown in your article -->
+                     @*The title and subtitle shown in your article*@ 
                     <h1>@Html.Raw(Model.Title)</h1>
                     @if (Model.Subtitle != null)
                     {
                         <h2> @Html.Raw(Model.Subtitle) </h2>
                     }
-                    <!-- A kicker for your article -->
+                     @*A kicker for your article*@ 
                     @if (Model.Kicker != null)
                     {
                         <h3 class="op-kicker">
                             @Html.Raw(Model.Kicker)
                         </h3>
                     }
-                    <!-- The author of your article -->
+                    @*The author of your article*@ 
                     @{if (Model.Authors != null)
                         {
                             Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/InstantArticleAuthors.cshtml", Model.Authors);
                         }
                     }
-                    <!-- The published and last modified time stamps -->
+                     @*The published and last modified time stamps*@ 
                     <time class="op-published" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.StartPublish); }">@string.Format("{0:f}", Model.StartPublish)</time>
                     <time class="op-modified" dateTime="@{ Html.RenderPartial(@Paths.PublicRootPath + "BVNetwork.InstantArticles/Views/Shared/DateTimeISO8601.cshtml", Model.Changed); }">@string.Format("{0:f}", Model.Changed)</time>
                 </header>
-                <!-- Article body goes here -->
+                 @*Article body goes here*@ 
                 @Html.PropertyFor(x => x.Body, new { Tag = "InstantArticle" })
                 @*<footer>
                         <!-- Article footer goes here -->
