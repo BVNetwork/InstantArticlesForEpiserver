@@ -15,7 +15,7 @@
     {
         foreach (var author in Model.Authors)
         {
-            <author> @author.Name</author>
+            <author> @Html.Raw(author.Name) </author>
         }
     }
     @*<description>This is my first Instant Article. How awesome is this?</description>*@
