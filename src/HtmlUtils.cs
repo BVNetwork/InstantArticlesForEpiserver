@@ -68,10 +68,7 @@ namespace BVNetwork.InstantArticles
             if (source == null)
                 return null;
             source = source.Replace("<p>&nbsp;</p>", "");
-            source = source.Replace("<p</p>", "");
-            source = source.Replace("<h2></h2>", "");
-
-
+            source = source.Replace("<p></p>", "");
 
             HtmlDocument html = GetHtml(source);
             if (html == null) return String.Empty;

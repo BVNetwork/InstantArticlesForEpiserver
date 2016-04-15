@@ -17,7 +17,7 @@ using HtmlAgilityPack;
 
 namespace BVNetwork.InstantArticles.Controllers
 {
-   // [ContentOutputCache]
+   [ContentOutputCache]
     public class InstantArticleRssPageController : PageController<InstantArticleRssPage>
     {
         private static readonly ILogger logger = LogManager.GetLogger();
@@ -52,9 +52,9 @@ namespace BVNetwork.InstantArticles.Controllers
         public void SetResposneHeaders()
         {
             Response.AddHeader("Content-Type", "application/rss+xml");
-            //HttpContext.Response.Cache.SetExpires(DateTime.Now.AddMinutes(3.0));
-            //HttpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
-            //HttpContext.Response.Cache.SetValidUntilExpires(true);
+            HttpContext.Response.Cache.SetExpires(DateTime.Now.AddMinutes(3.0));
+            HttpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
+            HttpContext.Response.Cache.SetValidUntilExpires(true);
         }
 
         public InstantArticleRssPageController(IContentLoader contentLoader, IInstantArticleService instantArticleService)
