@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Hosting;
 using Castle.Core.Internal;
 using EPiServer;
 using EPiServer.Core;
+using EPiServer.Web;
+using EPiServer.Web.Routing;
 using HtmlAgilityPack;
 
 namespace BVNetwork.InstantArticles
@@ -28,7 +32,7 @@ namespace BVNetwork.InstantArticles
             {"ul", new string[]           {}},
             {"li", new string[]           {}},
             {"blockquote", new string[]   {}},
-            {"a", new string[]            {"*"}},
+            {"a", new string[]            {"href"}},
             {"cite", new string[]         {}},
             {"aside", new string[]        {}},
 
@@ -44,8 +48,9 @@ namespace BVNetwork.InstantArticles
             {
                 if (article.Body != null)
                 {
-                    var rawHtml = article.Body.ToEditString();
+                    var rawHtml = article.Body.ToHtmlString();
                     var sanitizedHtml = SanitizeHtml(rawHtml);
+                    //var absolutUrls = MakeUrlsAbsolute(sanitizedHtml);
                     article.Body = new XhtmlString(sanitizedHtml);
                 }
             }
@@ -58,9 +63,13 @@ namespace BVNetwork.InstantArticles
         /// <returns>Clean output</returns>
         private static string SanitizeHtml(string source)
         {
+            //source = RewriteUrlsToFriendly(source, true);
+
             if (source == null)
                 return null;
             source = source.Replace("<p>&nbsp;</p>", "");
+            source = source.Replace("<p</p>", "");
+            source = source.Replace("<h2></h2>", "");
 
 
 
@@ -111,6 +120,7 @@ namespace BVNetwork.InstantArticles
                 }
             }
             RemoveNestedParagraphElements(allNodes);
+
 
             return allNodes.InnerHtml;
         }
@@ -177,5 +187,49 @@ namespace BVNetwork.InstantArticles
                 }
             }
         }
+        public static string MakeUrlsAbsolute(string source)
+        {
+            HtmlDocument html = GetHtml(source);
+            if (html == null) return string.Empty;
+
+            // All the nodes
+            HtmlNode allNodes = html.DocumentNode;
+            var nodes = allNodes.SelectNodes("//a");
+            if (nodes == null)
+                return string.Empty;
+
+            foreach (HtmlNode link in nodes)
+            {
+                HtmlAttribute att = link.Attributes["href"];
+                if (att.Value.StartsWith("/"))
+                {
+                    var urlBuilder = new UrlBuilder(att.Value);
+                    Global.UrlRewriteProvider.ConvertToExternal(urlBuilder, null, Encoding.UTF8);
+
+
+                    att.Value = EPiServer.Web.SiteDefinition.Current.SiteUrl.ToString() + urlBuilder;
+                }
+                   
+            }
+            return allNodes.InnerHtml;
+        }
+        //public static string RewriteUrlsToAbsolut(string input)
+        //{
+        //    var urlBuilder = new UrlBuilder("");
+        //    Global.UrlRewriteProvider.ConvertToExternal(urlBuilder, null, System.Text.Encoding.UTF8);
+
+        //    // Make url's absolute
+        //    input = Regex.Replace(input, "<img(.*?)src=\"/link/*\"", "<img$1src=\"" + EPiServer.Configuration.Settings.Instance.SiteUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        //    input = Regex.Replace(input, "<a(.*?)href=\"/link/*\"", "<a$1href=\"" + EPiServer.Configuration.Settings.Instance.SiteUrl + Global.UrlRewriteProvider.ConvertToExternal(urlBuilder, null, System.Text.Encoding.UTF8), RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+
+        //    var toExternal = new FriendlyHtmlRewriteToExternal(UrlBuilder.RebaseKind.ToRootRelative);
+
+        //    return toExternal.RewriteString(
+        //        new UrlBuilder(HttpContext.Current.Request.Path),
+        //        new UrlBuilder(HttpContext.Current.Request.RawUrl),
+        //        HttpContext.Current.Response.ContentEncoding,
+        //        input);
+        //}
     }
 }
