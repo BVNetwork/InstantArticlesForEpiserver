@@ -43,7 +43,7 @@ namespace BVNetwork.InstantArticles
             {
                 if (article.Body != null)
                 {
-                    var rawHtml = article.Body.ToHtmlString();
+                    var rawHtml = article.Body.ToEditString();
                     var sanitizedHtml = SanitizeHtml(rawHtml);
                     //var absolutUrls = MakeUrlsAbsolute(sanitizedHtml);
                     article.Body = new XhtmlString(sanitizedHtml);
