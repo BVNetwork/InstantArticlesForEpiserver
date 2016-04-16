@@ -1,7 +1,5 @@
-﻿using System.Web.Mvc;
-using EPiServer;
+﻿using EPiServer;
 using EPiServer.Core;
-using EPiServer.Web.Mvc.Html;
 
 namespace BVNetwork.InstantArticles
 {

@@ -1,7 +1,6 @@
 ﻿
 namespace BVNetwork.InstantArticles
-{
-    public interface IInstantArticleImageBlock
+{public interface IInstantArticleImageFile
     {
         IInstantArticleImage CreateInstantArticleImage();
     }

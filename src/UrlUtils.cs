@@ -9,7 +9,6 @@ namespace BVNetwork.InstantArticles
 {
     public static class UrlUtils
     {
-
         public static string GetExternalUrl(ContentReference pageReference)
         {
             var urlResolver = ServiceLocator.Current.GetInstance<UrlResolver>();

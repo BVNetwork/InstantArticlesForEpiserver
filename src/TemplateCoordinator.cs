@@ -15,7 +15,6 @@ namespace BVNetwork.InstantArticles
     public class TemplateCoordinator : IViewTemplateModelRegistrator
     {
         public const string BlockFolder = "~/modules/BVNetwork.InstantArticles/Views/Shared/Blocks/";
-        
    
         /// <summary>
         /// Registers renderers/templates which are specific for this module
@@ -31,13 +30,19 @@ namespace BVNetwork.InstantArticles
                 Path = BlockPath("InstantArticleImageBlock.cshtml")
             });
 
+            viewTemplateModelRegistrator.Add(typeof(IInstantArticleImageFile), new TemplateModel
+            {
+                Name = "IInstantArticleImageFile",
+                Tags = new[] { "InstantArticle" },
+                AvailableWithoutTag = false,
+                Inherit = true,
+                Path = BlockPath("InstantArticleImageFile.cshtml")
+            });
         }
 
         private static string BlockPath(string fileName)
         {
             return string.Format("{0}{1}", BlockFolder, fileName);
         }
-
-
     }
 }

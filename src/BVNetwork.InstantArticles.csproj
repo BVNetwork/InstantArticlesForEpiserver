@@ -199,6 +199,7 @@
     <Compile Include="HtmlUtils.cs" />
     <Compile Include="IInstantArticleAuthorContent.cs" />
     <Compile Include="IInstantArticleImageBlock.cs" />
+    <Compile Include="IInstantArticleImageFile.cs" />
     <Compile Include="InstantArticle.cs" />
     <Compile Include="IInstantArticleService.cs" />
     <Compile Include="InstantArticleAuthor.cs" />
@@ -246,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InstallationResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Blocks\InstantArticleImageFile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

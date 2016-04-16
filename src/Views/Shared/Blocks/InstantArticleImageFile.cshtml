@@ -1,0 +1,12 @@
+﻿@model IInstantArticleImageFile
+@{
+    var instantArticleImage = Model != null ? Model.CreateInstantArticleImage() : null;
+
+    if (instantArticleImage != null)
+    {
+        <figure>
+            <img src="@UrlUtils.GetExternalUrl(instantArticleImage.Image)" class="instant-article" />
+            <figcaption>@Html.Raw(instantArticleImage.ImageCaption)</figcaption>
+        </figure>
+    }
+}

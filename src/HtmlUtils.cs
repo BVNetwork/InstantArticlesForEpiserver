@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Hosting;
 using Castle.Core.Internal;
 using EPiServer;
 using EPiServer.Core;
-using EPiServer.Web;
-using EPiServer.Web.Routing;
 using HtmlAgilityPack;
 
 namespace BVNetwork.InstantArticles

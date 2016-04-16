@@ -1,4 +1,3 @@
-using BVNetwork.InstantArticles;
 using EPiServer.Core;
 
 namespace BVNetwork.InstantArticles
