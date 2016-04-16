@@ -249,7 +249,7 @@
     <Folder Include="InstallationResources\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Blocks\InstantArticleImageFile.cshtml" />
+    <Content Include="Views\Shared\InstantArticleImageFile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
