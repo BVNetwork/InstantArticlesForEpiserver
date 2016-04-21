@@ -42,9 +42,8 @@ For images to be shown corectly inside the article (MainBody) you have to option
 1. Use a normal image => Inherit from ImageData and implement IInstantArticleImageFile.
 2. Create an "ImageBlock" => Inherit from BlockData and implement IInstantArticleImageBlock.
 
-Examples:
 
-1. ImageData
+Example using normal image
 
 ```C#
     public class ImageFile : ImageData, IInstantArticleImageFile
@@ -73,7 +72,7 @@ Examples:
         }
 ```
 
-2. "ImageBlock"
+Example using "ImageBlock"
 ```C#
     public class ImageBlock : BlockData, IInstantArticleImageBlock
     {
@@ -101,3 +100,57 @@ Examples:
         }
     }
 ```
+
+Create an implementation of IInstantArticleService and set it up with IOC.
+Example:
+```C#
+ public class InstantArticleService : IInstantArticleService
+    {
+        private static readonly ILogger logger = LogManager.GetLogger();
+
+        private IContentRepository _contentRepository;
+
+        public IEnumerable<IInstantArticlePage> GetAllInstantArticlePages()
+        {
+            var articles = SearchClient.Instance.Search<PageData>()
+                .Filter(x => x.MatchTypeHierarchy(typeof(IInstantArticlePage)))
+                .Take(1000)
+                .FilterForVisitor()
+                .Filter(x => ((IInstantArticlePage)x).ExcludeFromFacebook.Match(false))
+                .OrderByDescending(x => x.StartPublish)
+                .GetContentResult();
+
+              //  UpdateModifydate(articles);
+
+            return articles.Cast<IInstantArticlePage>();
+        }
+
+        private void UpdateModifydate(IContentResult<PageData> contentResult)
+        {
+            foreach (var item in contentResult.Items)
+            {
+                var page = _contentRepository.Get<PageData>(item.ContentLink).CreateWritableClone();
+                page["PageChangedOnPublish"] = true;
+                page.Changed = DateTime.Now;
+                _contentRepository.Save(page, SaveAction.Publish, AccessLevel.NoAccess);
+            }
+        }
+
+        public InstantArticleRssPage GetInstantArticleRssPage()
+        {
+            var InstantArticleRssPageRef = _contentRepository.Get<StartPage>(ContentReference.StartPage).InstantArticleRssPage;
+
+            try
+            {
+                return _contentRepository.Get<InstantArticleRssPage>(InstantArticleRssPageRef);
+            }
+            catch (Exception exception)
+            {
+                logger.Error("Please specify Instant Article RSS page on start page under Site settins", exception);
+                throw;
+            }
+        }
+        }
+    }
+```
+
