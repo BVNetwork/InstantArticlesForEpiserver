@@ -178,9 +178,10 @@ Example:
 ```
 
 ### Create a RSS-page ###
-Creat a RSS-page and set the Styl
+Creat a RSS-page in Episerver UI and set the default article style. You define the style on you Facebook-page.
 
 
 ## Mentions and resources ##
 * https://instantarticles.fb.com/
 * https://www.facebook.com/instant_articles/signup
+* https://developers.facebook.com/docs/instant-articles
