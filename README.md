@@ -1,5 +1,5 @@
-# Facebook Instant Articles module for EPiServer #
-Open source module for making Episerver pages avalible as Instant Articles on Facebook from your EPiServer CMS or Commerce site.
+# Instant Articles module for Episerver [BETA] #
+Open source module for making Episerver pages avalible as Instant Articles on Facebook from your Episerver CMS or Episerver Commerce site.
 
 ## Features ##
  * Creates an RSS feed that Facebook can consume making your Episerver pages avalible as Instant Articles in the Facebook mobile app.
@@ -37,7 +37,7 @@ Example of the required mothod CreateInstantArticle(...):
             return instantArticleAuthors;
         }
 ```
-
+### Images ###
 For images to be shown correctly inside the article (MainBody) you have to options.
 1. Use a normal image => Inherit from ImageData and implement IInstantArticleImageFile
 2. Create an "ImageBlock" => Inherit from BlockData and implement IInstantArticleImageBlock
@@ -177,5 +177,10 @@ Example:
     }
 ```
 
+### Create a RSS-page ###
+Creat a RSS-page and set the Styl
 
-#Mentions and Resources
+
+## Mentions and resources ##
+* https://instantarticles.fb.com/
+* https://www.facebook.com/instant_articles/signup
