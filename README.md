@@ -9,9 +9,8 @@ The installation is done through Visual Studio installing the nuget created from
 
 Let your article page type implement IInstantArticlePage
 
-
-
-        ```C#
+Example:
+```C#
         public IInstantArticle CreateInstantArticle(InstantArticleRssPage rssPage)
         {
             var instantArticle = this.CreateInstantArticleBase();
