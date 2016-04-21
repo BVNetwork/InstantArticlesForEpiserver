@@ -180,7 +180,7 @@ Example:
 ### Create a RSS-page ###
 Create a RSS-page in Episerver UI and set the default article style. You define the style on you Facebook-page.
 
-![](https://raw.githubusercontent.com/BVNetwork/InstantArticles/master/doc/img/InstantArticlePageInEpiserver.png)
+![](https://github.com/BVNetwork/InstantArticles/blob/master/doc/img/InstantArticlePageInEpiserver.png)
 
 
 ## Mentions and resources ##
