@@ -1,5 +1,5 @@
 # Facebook Instant Articles module for EPiServer #
-An open source module for making you pages avalible as Instant Articles on Facebook from your EPiServer CMS or Commerce site.
+Open source module for making Episerver pages avalible as Instant Articles on Facebook from your EPiServer CMS or Commerce site.
 
 ## Features ##
  * Creates an RSS feed that Facebook can consume making your Episerver pages avalible as Instant Articles in the Facebook mobile app.
@@ -38,12 +38,13 @@ Example of the required mothod CreateInstantArticle(...):
         }
 ```
 
-For images to be shown corectly inside the article (MainBody) you have to options, use:
-1. Use a normal image => Inherit from ImageData and implement IInstantArticleImageFile.
-2. Create an "ImageBlock" => Inherit from BlockData and implement IInstantArticleImageBlock.
+For images to be shown correctly inside the article (MainBody) you have to options.
+1. Use a normal image => Inherit from ImageData and implement IInstantArticleImageFile
+2. Create an "ImageBlock" => Inherit from BlockData and implement IInstantArticleImageBlock
 
+The first option is prefert for not globalised sites. Due to the fact that ImageData is not localicable you have to go for the "ImageBlock" solution have content in more then one language.
 
-Example using normal image
+Example using "normal image"
 
 ```C#
     public class ImageFile : ImageData, IInstantArticleImageFile
@@ -104,7 +105,7 @@ Example using "ImageBlock"
 Create an implementation of IInstantArticleService and set it up with IOC.
 Example:
 ```C#
- public class InstantArticleService : IInstantArticleService
+    public class InstantArticleService : IInstantArticleService
     {
         private static readonly ILogger logger = LogManager.GetLogger();
 
@@ -150,7 +151,31 @@ Example:
                 throw;
             }
         }
+
+        public InstantArticleService(IContentRepository contentRepository)
+        {
+            _contentRepository = contentRepository;
         }
+
+        //Example implementation if Episerver Find is not avalible
+        //private void FindAllInstantArticles(List<PageData> list, ContentReference parentPage)
+        //{
+        //    var loader = ServiceLocator.Current.GetInstance<IContentLoader>();
+        //    var children = loader.GetChildren<PageData>(parentPage);
+
+        //    children.ForEach(pg =>
+        //    {
+        //        if (pg is IInstantArticle)
+        //        {
+        //            list.Add(pg);
+        //        }
+
+        //        FindAllInstantArticles(list, pg.ContentLink);
+        //    });
+        //}
+
     }
 ```
 
+
+#Mentions and Resources
