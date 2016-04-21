@@ -1,4 +1,4 @@
-# Instant Articles module for Episerver [BETA] #
+# Instant Articles for Episerver [BETA] #
 Open source module for making Episerver pages avalible as Instant Articles on Facebook from your Episerver CMS or Episerver Commerce site.
 
 ## Features ##
@@ -179,6 +179,7 @@ Example:
 
 ### Create a RSS-page ###
 Creat a RSS-page in Episerver UI and set the default article style. You define the style on you Facebook-page.
+
 
 
 ## Mentions and resources ##
