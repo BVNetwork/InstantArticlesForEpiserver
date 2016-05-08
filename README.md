@@ -51,7 +51,7 @@ For images to be shown correctly inside the article (MainBody) you have to take 
 
 The first option is prefert for sites not that not requires globalisation. Due to the fact that ImageData is not localizable you have to go for the second solution if you have content in more then one language.
 
-**Example using the ImageModel approach**
+#####Example using the ImageModel approach#####
 
 ```C#
     public class ImageFile : ImageData, IInstantArticleImageFile
@@ -80,7 +80,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
         }
 ```
 
-**Example using ImageBlockModel approach**
+#####Example using ImageBlockModel approach#####
 ```C#
     public class ImageBlock : BlockData, IInstantArticleImageBlock
     {
@@ -116,7 +116,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
 ```
 
 ###Create an implementation of IInstantArticleService and set it up with IOC ###
-**Example using Episerver Find**
+#####Example using Episerver Find#####
 ```C#
     public class InstantArticleService : IInstantArticleService
     {
@@ -158,7 +158,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
         }
     }
 ```
-**Example NOT using Episerver Find**
+#####Example NOT using Episerver Find#####
 Swap the mothod GetAllInstantArticlePages with this implementation:
 ```C#
     public IEnumerable<IInstantArticlePage> GetAllInstantArticlePages()
@@ -186,7 +186,7 @@ Swap the mothod GetAllInstantArticlePages with this implementation:
     }
 ```
 
-**Set the IInstantArticleService up with IOC**
+#####Set the IInstantArticleService up with IOC#####
 In Alloy Demo site this could be done in the class DependencyResolverInitialization with the following line of code:
 ```C#
            //Implementations for custom interfaces can be registered here.
