@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>BVNetwork.InstantArticles</id>
-        <title>Instant Articles</title>
+        <title>Instant Articles for Episerver</title>
         <version>0.0.1</version>
         <owners>BV Network</owners>
         <authors>Pontus Hagman</authors>
@@ -10,8 +10,8 @@
         <projectUrl>https://github.com/BVNetwork/InstantArticles</projectUrl>
         <iconUrl>http://www.coderesort.com/favicon.ico</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>InstantArticles.</description>
-        <summary>InstantArticles.</summary>
+        <description>Enable Instant Articles for Facebook on your Episerver site</description>
+        <summary>This tool adds support for Facebook Instant Articles by creating a RSS feed of your articles that Facebook consumes</summary>
         <language>en-US</language>
       <dependencies>
         <dependency id="EPiServer.CMS.UI.Core" version="[9.0.0, 10.0)" />
