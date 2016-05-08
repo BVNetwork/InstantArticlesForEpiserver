@@ -116,7 +116,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
 ```
 
 ###Create an implementation of IInstantArticleService and set it up with IOC ###
-*** Example using Episerver Find ***
+**Example using Episerver Find**
 ```C#
     public class InstantArticleService : IInstantArticleService
     {
