@@ -6,7 +6,7 @@ Instant Articles is a publishing format that enables publishers to distribute ar
 ![](https://github.com/BVNetwork/InstantArticles/blob/master/doc/img/facebook instant article .jpg)
 
 ## Features ##
- * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume
+ * This tool adds support for Facebook Instant Articles by creating a RSS feed of your articles that Facebook consumes
  * Supporting Episerver CMS and Episerver Commerce
  * A best effort is made to generate valid Instant Article markup from the article source
 
