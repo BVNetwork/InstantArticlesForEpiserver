@@ -183,14 +183,15 @@ Example:
 
 ### Create a RSS-page ###
 Create a RSS page and set the default article style in Episerver edit view. (You define your custom Instant Article style on your Facebook page).
+
 ![](https://github.com/BVNetwork/InstantArticles/blob/master/doc/img/InstantArticlePageInEpiserver.png)
 
-Your are now ready to let Facebook starting consuming your RSS feed. Follow the starterguide here:
-https://developers.facebook.com/docs/instant-articles/quickstart 
+Your are now ready to let Facebook start consuming your RSS feed. Follow the starterguide here:
+https://developers.facebook.com/docs/instant-articles/quickstart
 
 ##Known problems and limitations##
-If the article contains internal links (within the Episerver site) it could cause Facebook to generate a warning. This warning is safe to ignore, Facebook are accepting these links just fine.
-Nested <span> within <p> within the article will be removed.
+If the article contains internal links (within the Episerver site) it could cause Facebook to generate a warning. This warning is safe to ignore, Facebook are accepting realative links just fine.
+If your article contains a <span> inside a <p>, it will be removed.
 
 
 ## Mentions and resources ##
