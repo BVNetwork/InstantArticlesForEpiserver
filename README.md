@@ -128,21 +128,9 @@ Example:
                 .OrderByDescending(x => x.StartPublish)
                 .GetContentResult();
 
-              //  UpdateModifydate(articles);
-
             return articles.Cast<IInstantArticlePage>();
         }
 
-        private void UpdateModifydate(IContentResult<PageData> contentResult)
-        {
-            foreach (var item in contentResult.Items)
-            {
-                var page = _contentRepository.Get<PageData>(item.ContentLink).CreateWritableClone();
-                page["PageChangedOnPublish"] = true;
-                page.Changed = DateTime.Now;
-                _contentRepository.Save(page, SaveAction.Publish, AccessLevel.NoAccess);
-            }
-        }
 
         public InstantArticleRssPage GetInstantArticleRssPage()
         {
