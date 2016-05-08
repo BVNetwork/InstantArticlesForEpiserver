@@ -1,5 +1,5 @@
 # Instant Articles for Episerver [BETA] #
-Open source module for making Episerver pages avalible as Instant Articles on Facebook from your Episerver CMS or Episerver Commerce site.
+Tool for making Episerver pages avalible as Instant Articles on Facebook from your Episerver CMS or Episerver Commerce site.
 
 ## Features ##
  * Creates an RSS feed that Facebook can consume making your Episerver pages avalible as Instant Articles in the Facebook mobile app.
