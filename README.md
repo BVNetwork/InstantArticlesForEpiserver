@@ -2,12 +2,12 @@
 **Enable Instant Articles for Facebook on your Episerver site**
 
 ## Features ##
- * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume.
+ * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume
  * Supporting Episerver CMS and Episerver Commerce
 
 ## Installation ##
 The installation is done through Visual Studio installing the nuget created from this project. 
-Let your article page type implement IInstantArticlePage and add required properties to you article page type.
+Let your article page type implement IInstantArticlePage and add your implementation of the required methods.
 
 Example of the required mothod CreateInstantArticle(...):
 ```C#
