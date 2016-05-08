@@ -3,6 +3,8 @@
 
 Instant Articles is a publishing format that enables publishers to distribute articles through Facebook's mobile app. It´s optimized for fast mobile performance with rich storytelling capabilities, branded design and customized visual display. [Read more about Instant Articles](https://developers.facebook.com/docs/instant-articles).
 
+![](https://github.com/BVNetwork/InstantArticles/blob/master/doc/img/facebook instant article .jpg)
+
 ## Features ##
  * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume
  * Supporting Episerver CMS and Episerver Commerce
