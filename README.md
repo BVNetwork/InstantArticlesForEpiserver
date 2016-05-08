@@ -1,4 +1,4 @@
-# Instant Articles for Episerver [BETA] #
+# Instant Articles for Episerver #
 **Enable Instant Articles for Facebook on your Episerver site**
 
 Instant Articles is a publishing format that enables publishers to distribute articles through Facebook's mobile app. It´s optimized for fast mobile performance with rich storytelling capabilities, branded design and customized visual display. [Read more about Instant Articles](https://developers.facebook.com/docs/instant-articles).
