@@ -109,8 +109,14 @@ The first option is prefert for sites not that not requires globalisation. Due t
     }
 ```
 
-###Create an implementation of IInstantArticleService and set it up with IOC###
-Example:
+###Add a new property to your start page###
+```C#
+        [Display(GroupName = Global.GroupNames.SiteSettings, Name = "Instant Article RSS page", Description = "A reference to the page  Instant Article RSS Page")]
+        public virtual PageReference InstantArticleRssPage { get; set; }
+```
+
+###Create an implementation of IInstantArticleService and set it up with IOC ###
+*** Example using Episerver Find ***
 ```C#
     public class InstantArticleService : IInstantArticleService
     {
@@ -131,7 +137,6 @@ Example:
             return articles.Cast<IInstantArticlePage>();
         }
 
-
         public InstantArticleRssPage GetInstantArticleRssPage()
         {
             var InstantArticleRssPageRef = _contentRepository.Get<StartPage>(ContentReference.StartPage).InstantArticleRssPage;
@@ -151,25 +156,41 @@ Example:
         {
             _contentRepository = contentRepository;
         }
-
-        //Example implementation if Episerver Find is not avalible
-        //private void FindAllInstantArticles(List<PageData> list, ContentReference parentPage)
-        //{
-        //    var loader = ServiceLocator.Current.GetInstance<IContentLoader>();
-        //    var children = loader.GetChildren<PageData>(parentPage);
-
-        //    children.ForEach(pg =>
-        //    {
-        //        if (pg is IInstantArticle)
-        //        {
-        //            list.Add(pg);
-        //        }
-
-        //        FindAllInstantArticles(list, pg.ContentLink);
-        //    });
-        //}
-
     }
+```
+**Example NOT using Episerver Find**
+Swap the methods with these implementations:
+```C#
+    public IEnumerable<IInstantArticlePage> GetAllInstantArticlePages()
+        {
+            var articles = new List<PageData>();
+            FindAllInstantArticles(articles, ContentReference.StartPage);
+            return articles.Cast<IInstantArticlePage>();
+        }
+        
+        private void FindAllInstantArticles(List<PageData> list, ContentReference parentPage)
+        {
+            var loader = ServiceLocator.Current.GetInstance<IContentLoader>();
+            var children = loader.GetChildren<PageData>(parentPage);
+
+            children.ForEach(pg =>
+            {
+                if (pg is IInstantArticlePage)
+                {
+                    list.Add(pg);
+                }
+
+                FindAllInstantArticles(list, pg.ContentLink);
+            });
+        }
+    }
+```
+
+**Set the IInstantArticleService up with IOC**
+In Alloy Demo site this could be done in the class DependencyResolverInitialization with the following line of code:
+```C#
+           //Implementations for custom interfaces can be registered here.
+            container.For<IInstantArticleService>().Use<InstantArticleService>();
 ```
 
 ### Create a RSS-page ###
