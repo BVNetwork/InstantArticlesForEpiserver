@@ -1,6 +1,8 @@
 # Instant Articles for Episerver [BETA] #
 **Enable Instant Articles for Facebook on your Episerver site**
 
+Instant Articles is a publishing format that enables publishers to distribute articles through Facebook's mobile app. It´s optimized for fast mobile performance with rich storytelling capabilities, branded design and customized visual display. [Read more about Instant Articles](https://developers.facebook.com/docs/instant-articles).
+
 ## Features ##
  * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume
  * Supporting Episerver CMS and Episerver Commerce
@@ -104,7 +106,8 @@ The first option is prefert for sites not that not requires globalisation. Due t
     }
 ```
 
-**Create an implementation of IInstantArticleService and set it up with IOC. Example:** 
+###Create an implementation of IInstantArticleService and set it up with IOC###
+Example:
 ```C#
     public class InstantArticleService : IInstantArticleService
     {
@@ -179,9 +182,15 @@ The first option is prefert for sites not that not requires globalisation. Due t
 ```
 
 ### Create a RSS-page ###
-Create a RSS page in Episerver Edit view and set the default article style. You define the style on you Facebook page.
-
+Create a RSS page and set the default article style in Episerver edit view. (You define your custom Instant Article style on your Facebook page).
 ![](https://github.com/BVNetwork/InstantArticles/blob/master/doc/img/InstantArticlePageInEpiserver.png)
+
+Your are now ready to let Facebook starting consuming your RSS feed. Follow the starterguide here:
+https://developers.facebook.com/docs/instant-articles/quickstart 
+
+##Known problems and limitations##
+If the article contains internal links (within the Episerver site) it could cause Facebook to generate a warning. This warning is safe to ignore, Facebook are accepting these links just fine.
+Nested <span> within <p> within the article will be removed.
 
 
 ## Mentions and resources ##
