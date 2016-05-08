@@ -51,7 +51,7 @@ For images to be shown correctly inside the article (MainBody) you have to take 
 
 The first option is prefert for sites not that not requires globalisation. Due to the fact that ImageData is not localizable you have to go for the second solution if you have content in more then one language.
 
-**Example using the ImageModel approach:**
+**Example using the ImageModel approach**
 
 ```C#
     public class ImageFile : ImageData, IInstantArticleImageFile
@@ -80,7 +80,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
         }
 ```
 
-**Example using ImageBlockModel**
+**Example using ImageBlockModel approach**
 ```C#
     public class ImageBlock : BlockData, IInstantArticleImageBlock
     {
@@ -159,7 +159,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
     }
 ```
 **Example NOT using Episerver Find**
-Swap the methods with these implementations:
+Swap the mothod GetAllInstantArticlePages with this implementation:
 ```C#
     public IEnumerable<IInstantArticlePage> GetAllInstantArticlePages()
         {
