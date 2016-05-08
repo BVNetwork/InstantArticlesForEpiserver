@@ -191,7 +191,7 @@ https://developers.facebook.com/docs/instant-articles/quickstart
 
 ##Known problems and limitations##
 If the article contains internal links (within the Episerver site) it could cause Facebook to generate a warning. This warning is safe to ignore, Facebook are accepting realative links just fine.
-If your article contains <span> inside <p> , the <span> will be removed.
+If your article contains span-element inside p-element , the span-element will be removed.
 
 
 ## Mentions and resources ##
