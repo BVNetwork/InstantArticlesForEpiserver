@@ -1,8 +1,9 @@
 # Instant Articles for Episerver [BETA] #
-Tool for making Episerver pages avalible as Instant Articles on Facebook from your Episerver CMS or Episerver Commerce site.
+**Enable Instant Articles for Facebook on your Episerver site**
 
 ## Features ##
- * Creates an RSS feed that Facebook can consume making your Episerver pages avalible as Instant Articles on Facebook.
+ * This tool adds support for Facebook Instant Aricles by creating a RSS feed that Facebook can consume.
+ * Supporting Episerver CMS and Episerver Commerce
 
 ## Installation ##
 The installation is done through Visual Studio installing the nuget created from this project. 
