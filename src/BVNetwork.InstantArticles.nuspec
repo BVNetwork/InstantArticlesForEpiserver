@@ -7,7 +7,7 @@
         <owners>BV Network</owners>
         <authors>Pontus Hagman</authors>
         <licenseUrl>https://www.coderesort.com/p/epicode/wiki/EpicodeLicense</licenseUrl>
-        <projectUrl>https://github.com/BVNetwork/InstantArticles</projectUrl>
+        <projectUrl>https://github.com/BVNetwork/InstantArticlesForEpiserver</projectUrl>
         <iconUrl>http://www.coderesort.com/favicon.ico</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Enable Instant Articles for Facebook on your Episerver site</description>
