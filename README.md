@@ -49,7 +49,7 @@ For images to be shown correctly inside the article (MainBody) you have to take 
 * 1. Create your own **ImageModel** class, inherit from ImageData and implement IInstantArticleImageFile
 * 2. Create your own **ImageBlockModel** by inheriting from from BlockData (or any derived class) and implement IInstantArticleImageBlock
 
-The first option is prefert for sites not that not requires globalisation. Due to the fact that ImageData is not localizable you have to go for the second solution if you have content in more then one language.
+The first option is prefert for sites that not requires globalisation. Due to the fact that ImageData is not localizable you have to go for the second solution if you have content in more then one language.
 
 #####Example using the ImageModel approach#####
 
@@ -159,7 +159,7 @@ The first option is prefert for sites not that not requires globalisation. Due t
     }
 ```
 #####Example NOT using Episerver Find#####
-Swap the mothod GetAllInstantArticlePages with this implementation:
+Swap the method GetAllInstantArticlePages with this implementation:
 ```C#
     public IEnumerable<IInstantArticlePage> GetAllInstantArticlePages()
         {
