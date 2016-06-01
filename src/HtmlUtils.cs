@@ -22,7 +22,7 @@ namespace BVNetwork.InstantArticles
             {"h3", new string[]           {}},
             {"h4", new string[]           {}},
             {"h5", new string[]           {}},
-            {"h6", new string[]           {}},
+            {"br", new string[]           {}},
             {"ol", new string[]           {}},
             {"ul", new string[]           {}},
             {"li", new string[]           {}},
