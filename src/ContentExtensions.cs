@@ -1,4 +1,5 @@
-﻿using EPiServer;
+﻿using System;
+using EPiServer;
 using EPiServer.Core;
 
 namespace BVNetwork.InstantArticles
@@ -27,7 +28,7 @@ namespace BVNetwork.InstantArticles
                 Title = page.PageName,
                 PageLink = page.PageLink,
                 ContentGuid = page.ContentGuid,
-                StartPublish = page.StartPublish,
+                StartPublish = page.StartPublish ?? DateTime.MinValue,
                 Changed = page.Changed
             };
         }
