@@ -15,8 +15,7 @@ The installation is done through Visual Studio by installing the nuget created f
 Let your article page type implement IInstantArticlePage and implement the required method and property.
 
 Implementation examples:
-```C#
-        [ServiceConfiguration(ServiceType = typeof(IInstantArticleService))]
+```C#       
         public IInstantArticle CreateInstantArticle(InstantArticleRssPage rssPage)
         {
             var instantArticle = this.CreateInstantArticleBase();
@@ -119,6 +118,7 @@ The first option is prefert for sites that not requires globalisation. Due to th
 ###Create an implementation of IInstantArticleService and set it up with IOC ###
 #####Example using Episerver Find#####
 ```C#
+    [ServiceConfiguration(ServiceType = typeof(IInstantArticleService))]        
     public class InstantArticleService : IInstantArticleService
     {
         private static readonly ILogger logger = LogManager.GetLogger();
@@ -187,12 +187,6 @@ Swap the method GetAllInstantArticlePages with this implementation:
     }
 ```
 
-#####Set the IInstantArticleService up with IOC#####
-In Alloy Demo site this could be done in the class DependencyResolverInitialization with the following line of code:
-```C#
-           //Implementations for custom interfaces can be registered here.
-            container.For<IInstantArticleService>().Use<InstantArticleService>();
-```
 
 ### Create a RSS-page ###
 Create a RSS page and set the default article style in Episerver edit view. (You define your custom Instant Article style on your Facebook page).
