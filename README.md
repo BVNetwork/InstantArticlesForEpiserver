@@ -16,6 +16,7 @@ Let your article page type implement IInstantArticlePage and implement the requi
 
 Implementation examples:
 ```C#
+        [ServiceConfiguration(ServiceType = typeof(IInstantArticleService))]
         public IInstantArticle CreateInstantArticle(InstantArticleRssPage rssPage)
         {
             var instantArticle = this.CreateInstantArticleBase();
